@@ -1,0 +1,11 @@
+<template name="lnrListCourses">
+  <ul>
+    {{#each courses}}
+      {{> lnrListCoursesItem}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="lnrListCoursesItem">
+  <li>{{type}} {{level}} in {{title}}</li>
+</template>

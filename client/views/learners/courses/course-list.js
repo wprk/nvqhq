@@ -1,4 +1,4 @@
-Template.listCourses.helpers({
+Template.lnrListCourses.helpers({
   courses: function() {
     return Courses.find();
   }

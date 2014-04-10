@@ -1,11 +1,11 @@
-<template name="listCourses">
+<template name="admListCourses">
   <ul>
     {{#each courses}}
-      {{> listCoursesItem}}
+      {{> admListCoursesItem}}
     {{/each}}
   </ul>
 </template>
 
-<template name="listCoursesItem">
+<template name="admListCoursesItem">
   <li>{{type}} {{level}} in {{title}}</li>
 </template>

@@ -8,3 +8,6 @@ insecure
 bootstrap
 coffeescript
 iron-router
+accounts-base
+accounts-password
+spin
