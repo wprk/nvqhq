@@ -5,7 +5,6 @@
 
 standard-app-packages
 insecure
-bootstrap
 coffeescript
 iron-router
 spin
@@ -14,3 +13,6 @@ accounts-password
 accounts-twitter
 accounts-google
 accounts-facebook
+less
+less-fontawesome-4
+less-bootstrap-3
