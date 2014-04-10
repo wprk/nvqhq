@@ -1,26 +1,26 @@
 var courseData = [
   {
-    title: 'Hairdressing'
+    title: 'Hairdressing',
     type: 'NVQ',
     level: '1'
   },
   {
-    title: 'Barbering'
+    title: 'Barbering',
     type: 'NVQ',
     level: '1'
   },
   {
-    title: 'Hairdressing'
+    title: 'Hairdressing',
     type: 'NVQ',
     level: '2'
   },
   {
-    title: 'Barbering'
+    title: 'Barbering',
     type: 'NVQ',
     level: '2'
   },
   {
-    title: 'Hairdressing'
+    title: 'Hairdressing',
     type: 'NVQ',
     level: '3'
   }
