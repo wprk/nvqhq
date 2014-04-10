@@ -40,4 +40,11 @@ if (Courses.find().count() === 0) {
     level: '3',
     status: false
   });
+  
+  Courses.insert({
+    title: 'Car Mechanics',
+    type: 'NVQ',
+    level: '1',
+    status: false
+  });
 }
