@@ -50,7 +50,10 @@ header #accountInfo {
             }
         }
         &.loggedout {
-            padding: 0 @navbar-padding-horizontal 0 @navbar-padding-horizontal !important;
+            a.dropdown-toggle {
+                height: @navbar-height;
+                padding: 0 @navbar-padding-horizontal 0 @navbar-padding-horizontal !important;
+            }
         }
     }
 }
