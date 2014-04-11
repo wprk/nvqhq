@@ -21,12 +21,16 @@ header #accountInfo {
     position: absolute;
     top:0;
     right: 0;
+    padding-right: @navbar-padding-horizontal;
 
     height: @navbar-height;
 
     li {
         padding-right: @navbar-padding-horizontal;
         &.loggedin {
+            a {
+                padding: 0;
+            }
             padding: 0;
 
             .caret {
