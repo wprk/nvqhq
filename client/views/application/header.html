@@ -40,7 +40,7 @@
         </div>
         <!-- end: Header Menu -->
     </header>
-	<!-- end: Header -->
+    <!-- end: Header -->
 </template>
 
 <template name="user_info">
@@ -56,23 +56,23 @@
     <li><a>Logging in...</a></li>
   {{else}}
     <li class="dropdown">
-      <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
-        <div class="avatar"><img src="{{currentUser.profile.avatar_url}}" alt="Avatar"></div>
-        <div class="user">
-          <span class="hello">Welcome!</span>
-          <span class="name">{{currentUser.profile.login}}</span>
-        </div>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a href="index.html#"><i class="fa fa-user"></i> Profile</a></li>
-        <li><a href="index.html#"><i class="fa fa-cog"></i> Settings</a></li>
-        <li><a href="index.html#"><i class="fa fa-envelope"></i> Messages</a></li>
-        <li><a href="page-login.html"><i class="fa fa-off"></i> Logout</a></li>
-      </ul>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <div class="avatar"><img src="{{currentUser.profile.avatar_url}}" alt="Avatar"></div>
+            <div class="user">
+                <span class="hello">Welcome!</span>
+                <span class="name">{{currentUser.profile.login}}</span>
+            </div>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i> Messages</a></li>
+            <li><a href="#"><i class="fa fa-off"></i> Logout</a></li>
+        </ul>
     </li>
   {{/if}}
 </template>
 
 <template name="user_loggedout">
-  <li>{{> loginButtons }}</li>
+    <li><a href="#">Login</li>
 </template>
