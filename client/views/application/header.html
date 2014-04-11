@@ -3,20 +3,20 @@
     <header>
         <!-- start: Header Menu -->
         <div class="navbar navbar-inverse navbar-static-top">
-            <div class="navbar-header">
-                <button id="navbarToggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">NVQhq</a>
-            </div>
-            <ul id="accountInfo" class="nav navbar-nav navbar-right">
+            <div class="container">
+                <div class="navbar-header">
+<!--                     <button id="navbarToggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button> -->
+                    <a class="navbar-brand" href="/">NVQhq</a>
+                </div>
                 <!-- start: User Dropdown -->
                 {{> accountInfo}}
                 <!-- end: User Dropdown -->
-            </ul>
+            </div>
         </div>
         <!-- end: Header Menu -->
     </header>
@@ -25,9 +25,13 @@
 
 <template name="accountInfo">
   {{#if currentUser}}
-    {{> accountLoggedIn}}
+    <ul id="accountInfo" class="nav navbar-nav navbar-right loggedin">
+        {{> accountLoggedIn}}
+    </ul>
   {{else}}
-    {{> accountLoggedOut}}
+    <ul id="accountInfo" class="nav navbar-nav navbar-right loggedout">
+        {{> accountLoggedOut}}
+    </ul>
   {{/if}}
 </template>
 
@@ -35,12 +39,11 @@
   {{#if loggingIn}}
     <li><a>Logging in...</a></li>
   {{else}}
-    <li class="loggedin dropdown">
+    <li class="dropdown">
         <a class="data-toggle" data-toggle="dropdown" href="#">
             <div class="avatar"><img src="/imgs/avatars/example.png" alt="User Avatar"></div>
-            <b class="caret"></b>
-            <div class="user">
-                <span class="hello">Welcome!</span>
+            <div class="user_details">
+                <span class="welcome">Welcome!</span>
                 <span class="name">{{currentUser.profile.login}}</span>
             </div>
         </a>
@@ -55,7 +58,7 @@
 </template>
 
 <template name="accountLoggedOut">
-    <li class="loggedout dropdown">
+    <li class="dropdown">
         <a class="data-toggle" data-toggle="dropdown" href="#">
             Login
             <b class="caret"></b>
