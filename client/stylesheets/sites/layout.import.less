@@ -25,15 +25,14 @@ header #accountInfo {
     height: @navbar-height;
 
     li {
-        padding-right: @navbar-padding-horizontal;
         &.loggedin {
             a.dropdown-toggle {
-                padding: 0;
+                padding: 0 @navbar-padding-horizontal 0 @navbar-padding-horizontal;
             }
 
             .caret {
                 float: right;
-                margin: 22px 10px 0 0;
+                padding: 22px 10px 0 0;
             }
 
             .avatar {
