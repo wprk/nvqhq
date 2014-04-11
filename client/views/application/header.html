@@ -1,19 +1,20 @@
 <template name="header">
 		<!-- start: Header -->
-	<header class="navbar navbar-inverse navbar-fixed-top">
+	<header class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">NVQhq</a>
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="collapse navbar-collapse navHeaderCollapse">
-                <ul class="nav navbar-nav navbar-right">
+            <a class="navbar-brand" href="/">NVQhq</a>
+            <div class="navbar-collapse collapse navHeaderCollapse">
+                <ul class="nav navbar-nav">
                     <li><a href="/" class="active">Dashboard</a></li>
                     <li class="dropdown">
                         <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
-                            Courses
+                            Courses <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             {{#each courses}}
@@ -47,9 +48,9 @@
 
 <template name="user_loggedin">
   {{#if loggingIn}}
-    <li><a>Logging in...</a></li>
+    <li class=" pull-right"><a>Logging in...</a></li>
   {{else}}
-    <li class="dropdown">
+    <li class="dropdown pull-right">
       <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
         <div class="avatar"><img src="{{currentUser.profile.avatar_url}}" alt="Avatar"></div>
         <div class="user">
