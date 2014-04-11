@@ -47,12 +47,12 @@ Template.accountLoggedOut.events({
 Template.accountLoggedIn.events({
   "click #logout": function (event, tmpl) {
     event.preventDefault();
-    Meteor.logout({
+    Meteor.logout(
         function (error) {
             if (error) {
                 alert('error');
             }
         }
-    });
+    );
   }
 });
