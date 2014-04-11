@@ -37,6 +37,20 @@ Template.login.events({
   }
 });
 
+Template.login.events({
+  "click #loginWithGoogle": function (event, tmpl) {
+    event.preventDefault();
+    Meteor.loginWithPassword({
+      $('#username').val(),
+      $('#password').val()
+    }, function(error) {
+        if (error) {
+            alert(error);
+        }
+    });
+  }
+});
+
 Template.accountLoggedIn.events({
   "click #logout": function (event, tmpl) {
     event.preventDefault();
