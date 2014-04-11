@@ -12,9 +12,9 @@
                 </button>
                 <a class="navbar-brand" href="/">NVQhq</a>
             </div>
-            <ul class="nav navbar-nav pull-right">
+            <ul id="accountInfo" class="nav navbar-nav navbar-right">
                 <!-- start: User Dropdown -->
-                {{> user_info}}
+                {{> accountInfo}}
                 <!-- end: User Dropdown -->
             </ul>
             <div class="navbar-collapse collapse navHeaderCollapse">
@@ -43,15 +43,15 @@
     <!-- end: Header -->
 </template>
 
-<template name="user_info">
+<template name="accountInfo">
   {{#if currentUser}}
-    {{> user_loggedin}}
+    {{> accountLoggedIn}}
   {{else}}
-    {{> user_loggedout}}
+    {{> accountLoggedOut}}
   {{/if}}
 </template>
 
-<template name="user_loggedin">
+<template name="accountLoggedIn">
   {{#if loggingIn}}
     <li><a>Logging in...</a></li>
   {{else}}
@@ -73,6 +73,6 @@
   {{/if}}
 </template>
 
-<template name="user_loggedout">
+<template name="accountLoggedOut">
     <li><a href="#">Login</a></li>
 </template>
