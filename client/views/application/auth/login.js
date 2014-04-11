@@ -1,5 +1,5 @@
 // Template.user_loggedout.events({
-//   "click #login": function (event, form) {
+//   "click #loginWithFacebook": function (event, form) {
 //     Meteor.loginWithFacebook();
 //   }
 // });
