@@ -18,7 +18,14 @@ header #navbarToggle {
     margin-top: 8px;
     padding: 9px 10px;
 
-    z-index: @zindex-navbar;
+    height: @navbar-height;
+    width: 40px;
+
+    z-index: @zindex-navbar + 10;
+}
+
+header .navbar-brand {
+    margin-left: 40px;
 }
 
 header #accountInfo {
