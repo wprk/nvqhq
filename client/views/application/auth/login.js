@@ -1,6 +1,13 @@
 Template.accountLoggedOut.events({
   "click #loginWithFacebook": function (event, form) {
-    Meteor.loginWithFacebook();
+    event.preventDefault();
+    Meteor.loginWithFacebook({
+
+    }, function(error) {
+        if (error) {
+            alert(error);
+        }
+    });
   }
 });
 
