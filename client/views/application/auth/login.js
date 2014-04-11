@@ -47,7 +47,6 @@ Template.accountLoggedOut.events({
 Template.accountLoggedIn.events({
   "click #logout": function (event, tmpl) {
     event.preventDefault();
-    alert('logging out');
     Meteor.logout(
         function (error) {
             if (error) {
