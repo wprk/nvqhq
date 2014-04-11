@@ -3,22 +3,23 @@
 	<header class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">NVQhq</a>
-            <button class="navbar-toggle" data-toggle="collapse" data-target="navHeaderCollapse">Menu</button>
+            <button class="navbar-toggle" data-toggle="collapse" data-target="navHeaderCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <div class="collapse navbar-collapse navHeaderCollapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Dashboard</a></li>
+                    <li><a href="/" class="active">Dashboard</a></li>
+                    <li><a href="{{pathFor 'lnrCourseList'}}">Courses</a></li>
+                    <li><a href="#">Test Link</a></li>
+                    <li><a href="#">Test Link</a></li>
+                    <li><a href="#">Test Link</a></li>
+                    <!-- start: User Dropdown -->
+                    {{> user_info}}
+                    <!-- end: User Dropdown -->
                 </ul>
             </div>
-            <ul>
-				<li>
-					<a class="btn" href="index.html#">
-						<i class="fa fa-wrench"></i>
-					</a>
-				</li>
-				<!-- start: User Dropdown -->
-                {{> user_info}}
-				<!-- end: User Dropdown -->
-			</ul>
 		</div>
 		<!-- end: Header Menu -->
 	</header>
