@@ -17,7 +17,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             {{#each courses}}
-                                {{}}
+                                <!-- Add if user / admin checks -->
+                                {{> admListCoursesItem}}
                             {{/each}}
                         </ul>
                     </li>
@@ -68,8 +69,4 @@
 
 <template name="user_loggedout">
   <li>{{> loginButtons }}</li>
-</template>
-
-<template name="courseMenuItem">
-  <li>{{type}} {{level}} in {{title}}</li>
 </template>
