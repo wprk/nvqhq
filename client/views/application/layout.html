@@ -4,13 +4,21 @@
         <div class="row">
             {{> yield "sidebarLeft"}}
             {{#if currentUser}}
-            <div id="content" class="col-lg-10 col-sm-11">
+                {{> defaultWidth}}
             {{else}}
-            <div id="content" class="col-12">
+                {{> fullWidth}}
             {{/if}}
                 {{> yield}}
             </div>
         </div>
     </div>
     {{> footer}}
+</template>
+
+<template name="defaultWidth">
+    <div id="content" class="col-lg-10 col-sm-11">
+</template>
+
+<template name="fullWidth">
+    <div id="content" class="col-12">
 </template>
