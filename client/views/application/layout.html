@@ -8,8 +8,6 @@
             {{else}}
                 {{> fullWidth}}
             {{/if}}
-                {{> yield}}
-            </div>
         </div>
     </div>
     {{> footer}}
@@ -17,8 +15,12 @@
 
 <template name="defaultWidth">
     <div id="content" class="col-lg-10 col-sm-11">
+        {{> yield}}
+    </div>
 </template>
 
 <template name="fullWidth">
     <div id="content" class="col-12">
+        {{> yield}}
+    </div>
 </template>
