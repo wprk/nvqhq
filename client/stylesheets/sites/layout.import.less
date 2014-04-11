@@ -26,6 +26,14 @@ header #accountInfo {
 
     li {
         padding-right: @navbar-padding-horizontal;
+        &.loggedin {
+            padding: 0;
+
+            .avatar {
+                float: right;
+                width: 50px;
+            }
+        }
     }
 }
 

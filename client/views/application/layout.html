@@ -2,10 +2,12 @@
     {{> header}}
     <div class="container">
         <div class="row">
-            <div id="sidebar-left" class="col-lg-2 col-sm-1">
-                {{> sidebarLeft}}
-            </div>
+            {{> yield "sidebarLeft"}}
+            {{#if currentUser}}
             <div id="content" class="col-lg-10 col-sm-11">
+            {{else}}
+            <div id="content" class="col-12">
+            {{/if}}
                 {{> yield}}
             </div>
         </div>

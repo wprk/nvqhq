@@ -1,22 +1,24 @@
 <template name="sidebarLeft">
-    <div class="navbar-collapse collapse navHeaderCollapse">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Dashboard</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Courses <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    {{#each courses}}
-                        <!-- Add if user / admin checks -->
-                        {{> admListCoursesItem}}
-                    {{/each}}
-                </ul>
-            </li>
-            <li><a href="{{pathFor 'lnrCourseList'}}">Courses</a></li>
-            <li><a href="#">Test Link</a></li>
-            <li><a href="#">Test Link</a></li>
-            <li><a href="#">Test Link</a></li>
-        </ul>
+    <div id="sidebar-left" class="col-lg-2 col-sm-1">
+        <div class="navbar-collapse collapse navHeaderCollapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Dashboard</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Courses <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        {{#each courses}}
+                            <!-- Add if user / admin checks -->
+                            {{> admListCoursesItem}}
+                        {{/each}}
+                    </ul>
+                </li>
+                <li><a href="{{pathFor 'lnrCourseList'}}">Courses</a></li>
+                <li><a href="#">Test Link</a></li>
+                <li><a href="#">Test Link</a></li>
+                <li><a href="#">Test Link</a></li>
+            </ul>
+        </div>
     </div>
 </template>
