@@ -1,14 +1,20 @@
 <template name="layout">
-  {{> header}}
-  <div class="container">
-    <div class="row">
-        <div id="sidebar-left" class="col-lg-2 col-sm-1">
-            {{> sidebarLeft}}
+    <div class="container">
+        <div class="row">
+        <div id="header" class="col-12">
+            {{> header}}
         </div>
-        <div id="content" class="col-lg-10 col-sm-11">
-            {{> yield}}
         </div>
     </div>
-  </div>
-  {{> footer}}
+    <div class="container">
+        <div class="row">
+            <div id="sidebar-left" class="col-lg-2 col-sm-1">
+                {{> sidebarLeft}}
+            </div>
+            <div id="content" class="col-lg-10 col-sm-11">
+                {{> yield}}
+            </div>
+        </div>
+    </div>
+    {{> footer}}
 </template>
