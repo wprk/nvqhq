@@ -11,6 +11,11 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">NVQhq</a>
+            <ul class="nav navbar-nav pull-right">
+                <!-- start: User Dropdown -->
+                {{> user_info}}
+                <!-- end: User Dropdown -->
+            </ul>
             </div>
             <div class="navbar-collapse collapse navHeaderCollapse">
                 <ul class="nav navbar-nav">
@@ -30,9 +35,6 @@
                     <li><a href="#">Test Link</a></li>
                     <li><a href="#">Test Link</a></li>
                     <li><a href="#">Test Link</a></li>
-                    <!-- start: User Dropdown -->
-                    {{> user_info}}
-                    <!-- end: User Dropdown -->
                 </ul>
             </div>
         </div>
@@ -51,9 +53,9 @@
 
 <template name="user_loggedin">
   {{#if loggingIn}}
-    <li class=" pull-right"><a>Logging in...</a></li>
+    <li><a>Logging in...</a></li>
   {{else}}
-    <li class="dropdown pull-right">
+    <li class="dropdown">
       <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
         <div class="avatar"><img src="{{currentUser.profile.avatar_url}}" alt="Avatar"></div>
         <div class="user">
