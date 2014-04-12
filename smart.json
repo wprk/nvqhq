@@ -6,6 +6,7 @@
     "blaze-layout": {},
     "spin": {},
     "jquery-ui-bootstrap": {},
-    "modernizr-meteor": {}
+    "modernizr-meteor": {},
+    "roles": {}
   }
 }
