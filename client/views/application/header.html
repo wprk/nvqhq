@@ -250,5 +250,15 @@
 </template>
 
 <template name="accountLoggedOut">
-  <li><a href="{{pathFor 'login'}}">Login</a></li>
+    <li class="dropdown">
+      <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
+        <div class="user">
+          <span class="hello">Login or </span>
+          <span class="name">Register</span>
+        </div>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="{{pathFor 'login'}}"><i class="fa fa-user"></i> login</a></li>
+      </ul>
+    </li>
 </template>
