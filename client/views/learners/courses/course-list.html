@@ -7,5 +7,5 @@
 </template>
 
 <template name="lnrListCoursesItem">
-  <li>{{type}} {{level}} in {{title}}</li>
+  <li><a href="{{pathFor 'lnrCourse'}}"><i class="fa fa-folder"></i><span class="hidden-sm text">{{type}} {{level}} in {{title}}</span></a></li>
 </template>
