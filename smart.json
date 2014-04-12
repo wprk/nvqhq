@@ -4,6 +4,8 @@
     "less-fontawesome-4": {},
     "iron-router": {},
     "blaze-layout": {},
-    "spin": {}
+    "spin": {},
+    "jquery-ui-bootstrap": {},
+    "modernizr-meteor": {}
   }
 }

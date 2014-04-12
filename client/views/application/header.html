@@ -90,16 +90,10 @@
 						</ul>
 					</li>
 					<!-- end: Message Dropdown -->
-					<li>
-						<a class="btn" href="#">
-							<i class="fa fa-wrench"></i>
-						</a>
-					</li>
           {{> accountInfo}}
 				</ul>
 			</div>
 			<!-- end: Header Menu -->
-			
 		</div>	
 	</header>
 	<!-- end: Header -->
@@ -123,13 +117,11 @@
         <div class="avatar"><img src="/imgs/avatars/example.png" alt="Avatar"></div>
         <div class="user">
           <span class="hello">Welcome!</span>
-          <span class="name">{{currentUser.profile.login}}</span>
+          <span class="name">{{currentUser.profile.name}}</span>
         </div>
       </a>
       <ul class="dropdown-menu">
-        <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-        <li><a href="#"><i class="fa fa-envelope"></i> Messages</a></li>
+        <li><a href="{{pathFor 'lnrProfile'}}"><i class="fa fa-user"></i> Profile</a></li>
         <li><a id="logout" href="#"><i class="fa fa-off"></i> Logout</a></li>
       </ul>
     </li>

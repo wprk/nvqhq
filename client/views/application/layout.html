@@ -2,25 +2,11 @@
     {{> header}}
     <div class="container">
         <div class="row">
-            {{> yield region='sidebarLeft'}}
-            {{#if currentUser}}
-                {{> defaultWidth}}
-            {{else}}
-                {{> fullWidth}}
-            {{/if}}
+            {{> yield 'sidebarLeft'}}
+            <div id="content" class="col-lg-10 col-sm-11">
+                {{> yield }}
+            </div>
         </div>
     </div>
     {{> footer}}
-</template>
-
-<template name="defaultWidth">
-    <div id="content" class="col-lg-10 col-sm-11">
-        {{> yield}}
-    </div>
-</template>
-
-<template name="fullWidth">
-    <div id="content" class="col-lg-12">
-        {{> yield}}
-    </div>
 </template>

@@ -5,20 +5,7 @@ Template.login.events({
 
     }, function(error) {
         if (error) {
-            alert(error);
-        }
-    });
-  }
-});
-
-Template.login.events({
-  "click #loginWithTwitter": function (event, tmpl) {
-    event.preventDefault();
-    Meteor.loginWithTwitter({
-
-    }, function(error) {
-        if (error) {
-            alert(error);
+            console.log(error);
         }
     });
   }
@@ -31,21 +18,22 @@ Template.login.events({
 
     }, function(error) {
         if (error) {
-            alert(error);
+            console.log(error);
         }
     });
   }
 });
 
 Template.login.events({
-  "click #loginWithGoogle": function (event, tmpl) {
+  "click #login": function (event, tmpl) {
     event.preventDefault();
-    Meteor.loginWithPassword({
-      $('#username').val(),
-      $('#password').val()
-    }, function(error) {
+    
+    var email = tmpl.find('#username').val(),
+    password = tmpl.find('#password').val();
+    
+    Meteor.loginWithPassword(email, password, function(error) {
         if (error) {
-            alert(error);
+            console.log(error);
         }
     });
   }
