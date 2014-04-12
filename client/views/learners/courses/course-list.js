@@ -1,5 +1,5 @@
-Template.lnrListCourses.helpers({
+Template.lnrCoursesList.helpers({
   courses: function() {
-    return Courses.find();
+    return lnrCourses.find();
   }
 });

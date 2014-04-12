@@ -1,5 +1,5 @@
-Template.admListCourses.helpers({
+Template.admCoursesList.helpers({
   courses: function() {
-    return Courses.find();
+    return admCourses.find();
   }
 });

@@ -1,11 +1,11 @@
 Template.lnrSidebarLeft.helpers({
   courses: function() {
-    return Courses.find();
+    return lnrCourses.find();
   }
 });
 
 Template.admSidebarLeft.helpers({
   courses: function() {
-    return Courses.find();
+    return admCourses.find();
   }
 });

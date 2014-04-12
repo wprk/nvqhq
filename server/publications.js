@@ -3,11 +3,11 @@ Meteor.publish('allCourses', function() {
 });
 
 Meteor.publish('admCourses', function() {
-  return Courses.find({status: true});
+  return admCourses.find({status: true});
 });
 
 Meteor.publish('lnrCourses', function() {
-  return Courses.find({status: true});
+  return lnrCourses.find({status: true});
 });
 
 // Roles for accounts

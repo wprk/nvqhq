@@ -1,10 +1,11 @@
 <template name="layout">
+    <!-- Start of Main Template -->
     {{> yield 'header'}}
     <div class="container">
         <div class="row">
             {{> yield 'sidebarLeft'}}
             <div id="content" class="col-lg-10 col-sm-11">
-                {{> yield }}
+                {{> yield 'content'}}
             </div>
         </div>
     </div>
