@@ -1,16 +1,11 @@
-Meteor.publish('allCourses', function() {
-  return Courses.find({});
+Meteor.publish("courses", function (group) {
+  if (Roles.userIsInRole(this.userId, ['admin'], group)) {
+    return Courses.find();     
+  } else {
+    this.stop();
+    return;
+    //return Courses.find(
+    //  {status: true}
+    //);      
+  }
 });
-
-Meteor.publish('admCourses', function() {
-  return admCourses.find({status: true});
-});
-
-Meteor.publish('lnrCourses', function() {
-  return lnrCourses.find({status: true});
-});
-
-// Roles for accounts
-Meteor.publish(null, function (){ 
-  return Meteor.roles.find({})
-})

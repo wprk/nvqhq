@@ -1,6 +1,7 @@
 Accounts.onCreateUser(function(options, user) {
   var email, oldUser, service;
   user.organisationId = null;
+  user.type = 'admin';
   user.networks = [];
   user.attending = [];
   if (user.profile == null) {

@@ -1,0 +1,6 @@
+parts install meteor
+npm install -g meteorite
+cd workspace/
+git clone git@github.com:wprk/nvqhq.git
+cd nvqhq/
+ROOT_URL=<URL> mrt
