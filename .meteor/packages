@@ -21,3 +21,4 @@ service-configuration
 oauth
 modernizr-meteor
 roles
+bootstrap-errors

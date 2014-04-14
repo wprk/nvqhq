@@ -5,6 +5,7 @@
         <div class="row">
             {{> yield 'sidebarLeft'}}
             <div id="content" class="col-lg-10 col-sm-11">
+                {{> bootstrapErrors}}
                 {{> yield}}
             </div>
         </div>

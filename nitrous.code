@@ -7,3 +7,5 @@ ROOT_URL=<URL> mrt
 git config --global user.email "wprk14@gmail.com"
 git config --global user.name "Will Parker"
 git config --global push.default simple
+
+kill -9 `ps ax | grep node | grep meteor | awk '{print $1}'`

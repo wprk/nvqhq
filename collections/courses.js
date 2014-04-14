@@ -23,5 +23,3 @@ if (Meteor.isClient) {
     }
   });
 }
-    
-// Organisations = new Meteor.Collection('organisations');

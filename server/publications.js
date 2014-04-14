@@ -1,11 +1,37 @@
-Meteor.publish("courses", function (group) {
-  if (Roles.userIsInRole(this.userId, ['admin'], group)) {
-    return Courses.find();     
+Meteor.publish("courses", function () {
+  if (this.userId) {
+    user = Meteor.users.findOne({_id: this.userId});
+    organisation = Organisations.find({
+      _id: user.organisation._id
+    });
+    if (Roles.userIsInRole(this.userId, ['admin'], user.organisation._id)) {
+      return Courses.find({_id: {$in: organisation.courses}});
+    } else if (Roles.userIsInRole(this.userId, ['learner'], user.organisation._id)) {
+      return Courses.find({
+        _id: {$in: organisation.courses},
+        status: true
+      });
+    } else {
+      this.stop();
+    }
   } else {
     this.stop();
-    return;
-    //return Courses.find(
-    //  {status: true}
-    //);      
   }
+});
+
+Meteor.publish("organisations", function () {
+  if (this.userId) {
+    user = Meteor.users.findOne({_id: this.userId});
+    organisation = Organisations.find({
+      _id: user.organisation._id
+    });
+    return organisation;
+  } else {
+    this.stop();
+  }
+});
+
+Meteor.publish("userData", function () {
+    return Meteor.users.find({_id: this.userId},
+        {fields: {'organisation': 1}});
 });

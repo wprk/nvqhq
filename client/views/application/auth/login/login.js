@@ -43,6 +43,7 @@ Template.accountLoggedIn.events({
   "click #logout": function (event, tmpl) {
     event.preventDefault();
     Meteor.logout(function() {
+        Errors.throw('info', 'You have been logged out.');
         Router.go('login');
     });
   }
