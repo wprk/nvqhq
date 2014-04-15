@@ -1,10 +1,13 @@
 Meteor.publish("courses", function () {
   if (this.userId) {
     user = Meteor.users.findOne({_id: this.userId});
-    organisation = Organisations.find({
+    organisation = Organisations.findOne({
       _id: user.organisation._id
     });
-    organisationCourses = Array.isArray(organisation.courses) ? organisation.courses : Array();
+    organisationCourses = Array();
+    for (i = 0; organisation.courses.length > i; i++) {
+      organisationCourses.push(organisation.courses[i]._id);
+    }
     if (Roles.userIsInRole(this.userId, ['admin'], user.organisation._id)) {
       return Courses.find({_id: {$in: organisationCourses}});
     } else if (Roles.userIsInRole(this.userId, ['learner'], user.organisation._id)) {

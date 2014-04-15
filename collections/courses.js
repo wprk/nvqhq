@@ -1,12 +1,12 @@
-Courses = new Meteor.Collection('Courses');
+Courses = new Meteor.Collection('courses');
 
-if (Meteor.isClient) {  
+if (Meteor.isClient) {
   Template.lnrSidebarLeft.helpers({
     courses: function() {
       return Courses.find();
     }
   });
-  
+
   Template.admSidebarLeft.helpers({
     courses: function() {
       return Courses.find();
