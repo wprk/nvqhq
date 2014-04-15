@@ -1,14 +1,15 @@
 Accounts.onCreateUser(function(options, user) {
   var email, oldUser, service;
   var userOrganisation = Organisations.findOne();
-  user.organisation = {
+  if (user.profile == null) {
+    user.profile = {};
+  }
+  user.profile.organisation = {
     _id: userOrganisation._id,
     verified: 0,
     verified_by: 'user'
   };
-  if (user.profile == null) {
-    user.profile = {};
-  }
+  user.profile.courses = Courses.find({}, {fields: {'_id': 1}}).fetch()[0];
   if (user.services != null) {
     service = _.keys(user.services)[0];
     email = user.services[service].email;
@@ -48,6 +49,6 @@ Accounts.onCreateUser(function(options, user) {
 // When new user added set roles
 Meteor.users.find().observe({
   added: function(user) {
-    Roles.addUsersToRoles(user._id, ['learner'], user.organisation._id);
+    Roles.addUsersToRoles(user._id, ['admin', 'superadmin'], user.profile.organisation._id);
   }
 });
