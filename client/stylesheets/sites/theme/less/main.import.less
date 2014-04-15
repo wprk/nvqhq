@@ -12,7 +12,7 @@
 	padding: 0px !important;
 }
 
-body {
+#wrap {
 	background: lighten(@grey, 20%);
 	color: @darkGrey;
 	border: none;
@@ -21,7 +21,7 @@ body {
 	margin: 0;
 	padding: 0;
 	position:relative;
-	
+
 	&:after {
 		top: 0;
 		left: 14.422%;
@@ -34,7 +34,7 @@ body {
 		border-left: 1px solid lighten(@grey, 15%);
 		z-index: 0;
 	}
-	
+
 	&:before {
 		content: '';
 		position:absolute;
@@ -46,9 +46,9 @@ body {
 		right: 0;
 		z-index: 0;
 	}
-	
+
 	&.sidebar-minified {
-		
+
 		&:after {
 			top: 0;
 			left: 40px !important;
@@ -61,9 +61,9 @@ body {
 			border-left: 1px solid lighten(@grey, 15%);
 			z-index: 0;
 		}
-		
+
 	}
-	
+
 }
 
 a {
@@ -82,7 +82,7 @@ h6 { font-size: 12px; line-height: 12px; }
 	position: relative;
 	background: @bodyBackground;
 	z-index: 1;
-	
+
 	&:before {
 		position: absolute;
 		content:'';
@@ -93,13 +93,13 @@ h6 { font-size: 12px; line-height: 12px; }
 		top: 0px;
 		left: -1px;
 	}
-	
+
 	&.sidebar-minified {
 		width: 100% !important;
 		border-left: 40px solid lighten(@grey, 20%);
 		margin-right: 1px !important;
 	}
-	
+
 	&.full {
 		width: 100% !important;
 		margin-left: 0px !important;
@@ -121,7 +121,7 @@ h6 { font-size: 12px; line-height: 12px; }
 	height: 40px;
 	position: relative;
 	border-bottom: 1px solid lighten(@grey, 15%);
-	
+
 	.choose-date {
 		position: absolute;
 		top:0px;
@@ -131,40 +131,40 @@ h6 { font-size: 12px; line-height: 12px; }
 		border: none;
 		border-left: 1px solid lighten(@grey, 15%);
 		padding: 3px 10px;
-		
-		.input-group-addon, 
+
+		.input-group-addon,
 		input {
 			background: transparent;
 			border: none;
 		}
-		
+
 		.input-group-addon {
 			font-size: 12px;
 		}
-		
+
 		input {
 			padding: 0;
 			font-weight: 300;
-			
+
 			&:focus {
 				outline: none;
 				.box-shadow;
 			}
-			
+
 		}
-		
-		
+
+
 	}
 }
 
 .box {
 	border: 1px solid lighten(@grey, 15%);
 	margin: 0px 0px 30px 0px;
-	
+
 	&.noOverflow {
 		overflow: hidden;
 	}
-	
+
 	.box-header {
 		background: white;
 		color: @darkGrey;
@@ -218,21 +218,21 @@ h6 { font-size: 12px; line-height: 12px; }
 		}
 
 	}
-	
+
 	.box-content {
 		padding: 10px;
 		background: white;
-		
+
 		&.no-padding {
 			background: white;
 			padding: 1px 0;
-		}	
+		}
 	}
-	
+
 }
 
 /* Typography - Blockquote
-=================================================================== */	
+=================================================================== */
 blockquote {
 	background: url(../img/quote.png) no-repeat 0px 10px;
 	font-style: italic;

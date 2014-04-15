@@ -33,6 +33,8 @@ Meteor.publish("organisations", function () {
 });
 
 Meteor.publish("userData", function () {
-    return Meteor.users.find({_id: this.userId},
-        {fields: {'organisation': 1}});
+  return Meteor.users.find(
+    {_id: this.userId},
+    {fields: {'organisation': 1}}
+  );
 });
