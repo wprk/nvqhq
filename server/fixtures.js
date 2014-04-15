@@ -8,15 +8,6 @@ Meteor.startup(function () {
     Roles.createRole('learner');
   }
 
-  if (Organisations.find().count() === 0) {
-    Organisations.insert({
-      name: 'Test Organisation',
-      contact: [],
-      courses: [],
-      paymentDetails: []
-    });
-  }
-
   if (Courses.find().count() === 0) {
     Courses.insert({
       title: 'Hairdressing',
@@ -65,6 +56,15 @@ Meteor.startup(function () {
       type: 'NVQ',
       level: '1',
       status: false
+    });
+  }
+
+  if (Organisations.find().count() === 0) {
+    Organisations.insert({
+      name: 'Test Organisation',
+      contact: [],
+      courses: [Courses.find({}, {"_id": 1}).fetch()[0]],
+      paymentDetails: []
     });
   }
 });
