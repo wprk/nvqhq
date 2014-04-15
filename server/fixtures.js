@@ -63,7 +63,7 @@ Meteor.startup(function () {
     Organisations.insert({
       name: 'Test Organisation',
       contact: [],
-      courses: [Courses.find({}, {"_id": 1}).fetch()[0]],
+      courses: Courses.find({}, {"_id": 1}).fetch(),
       paymentDetails: []
     });
   }
