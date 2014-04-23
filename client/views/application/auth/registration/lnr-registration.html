@@ -1,0 +1,75 @@
+<template name="lnrRegistration">
+  <!-- Start of Learner Registration -->
+  <div class="row">
+    <div class="login-box">
+      <div class="header">
+        Create your account
+      </div>
+      
+      <form class="form-horizontal register" action="index.html" method="post">
+        <fieldset class="col-sm-12">
+          
+          <div class="form-group">
+            <label class="control-label" for="firstname">First Name</label>
+            <div class="controls row">
+              <div class="input-group col-sm-12">
+                <input type="text" class="form-control" id="firstname"/>
+              </div>	
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="control-label" for="lastname">Last Name</label>
+            <div class="controls row">
+              <div class="input-group col-sm-12">
+                <input type="text" class="form-control" id="lastname"/>
+              </div>	
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="control-label" for="username">Email</label>
+            <div class="controls row">
+              <div class="input-group col-sm-12">
+                <input type="text" class="form-control" id="username"/>
+              </div>	
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls row">
+              <div class="input-group col-sm-12">
+                <input type="password" class="form-control" id="password"/>
+              </div>	
+            </div>
+          </div>
+          
+          <div class="confirm">
+            <input type="checkbox" name="agree"/>
+            <label for="agree">I agree to <a href="#">Term of Use</a></label>
+          </div>	
+          
+          <div class="row">
+            <button id="register" type="submit" class="btn btn-primary btn-lg col-xs-12">Create Account!</button>
+          </div>
+          
+          <div class="text-with-hr">
+            <span>or use your a social account</span>
+          </div>
+          
+        </fieldset>	
+        
+      </form>			
+      
+      <p>
+        <a id="loginWithFacebook" class="btn btn-facebook"><span>Register via Facebook</span></a>
+      </p>		
+      
+      <p>
+        <a id="loginWithGoogle" class="btn btn-google"><span>Register via Google</span></a>
+      </p>		
+      
+    </div>
+  </div><!--/row-->
+</template>

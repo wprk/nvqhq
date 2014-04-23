@@ -1,73 +1,269 @@
-<template name="header">
-    <!-- start: Header -->
-    <header>
-        <!-- start: Header Menu -->
-        <div class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-<!--                     <button id="navbarToggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button> -->
-                    <a class="navbar-brand" href="/">NVQhq</a>
-                </div>
-                <!-- start: User Dropdown -->
-                {{> accountInfo}}
-                <!-- end: User Dropdown -->
-            </div>
-        </div>
-        <!-- end: Header Menu -->
-    </header>
-    <!-- end: Header -->
+<template name="defaultHeader">
+  <!-- Start of Default Header -->
+	<header class="navbar">
+		<div class="container">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".sidebar-nav.nav-collapse">
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			</button>
+			<a id="main-menu-toggle" class="hidden-xs open"><i class="fa fa-bars"></i></a>
+      <a class="navbar-brand col-md-2 col-sm-1 col-xs-2" href="{{pathFor 'index'}}"><span>NVQhq</span></a>
+			<!-- start: Header Menu -->
+			<div class="nav-no-collapse header-nav">
+				<ul class="nav navbar-nav pull-right">
+          {{> accountInfo}}
+				</ul>
+			</div>
+			<!-- end: Header Menu -->
+		</div>
+	</header>
+	<!-- end: Header -->
+</template>
+
+<template name="lnrHeader">
+  <!-- Start of Learner Header -->
+	<header class="navbar">
+		<div class="container">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".sidebar-nav.nav-collapse">
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			</button>
+			<a id="main-menu-toggle" class="hidden-xs open"><i class="fa fa-bars"></i></a>
+      <a class="navbar-brand col-md-2 col-sm-1 col-xs-2" href="{{pathFor 'index'}}"><span>NVQhq</span></a>
+			<!-- start: Header Menu -->
+			<div class="nav-no-collapse header-nav">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-warning"></i>
+							<span class="number">1</span>
+						</a>
+						<ul class="dropdown-menu notifications">
+							<li class="dropdown-menu-title">
+								<span>You have 1 notifications</span>
+							</li>
+							<li>
+                <a href="#">
+									<span class="icon blue"><i class="fa fa-user"></i></span>
+									<span class="message">New user registration</span>
+									<span class="time">yesterday</span>
+                </a>
+              </li>
+              <li class="dropdown-menu-sub-footer">
+                <a>View all notifications</a>
+							</li>
+						</ul>
+					</li>
+					<!-- start: Notifications Dropdown -->
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-tasks"></i>
+							<span class="number">1</span>
+						</a>
+						<ul class="dropdown-menu tasks">
+							<li>
+								<span class="dropdown-menu-title">You have 1 task in progress</span>
+              </li>
+							<li>
+                <a href="#">
+									<span class="header">
+										<span class="title">iOS Development</span>
+										<span class="percent"></span>
+									</span>
+                  <div class="taskProgress progressSlim progressBlue">80</div>
+                </a>
+              </li>
+							<li>
+                <a class="dropdown-menu-sub-footer">View all tasks</a>
+							</li>
+						</ul>
+					</li>
+					<!-- end: Notifications Dropdown -->
+					<!-- start: Message Dropdown -->
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-envelope"></i>
+							<span class="number">1</span>
+						</a>
+						<ul class="dropdown-menu messages">
+							<li>
+								<span class="dropdown-menu-title">You have 1 message</span>
+							</li>
+              <li>
+                <a href="#">
+                  <span class="avatar"><img src="/imgs/avatars/example.png" alt="Avatar"></span>
+									<span class="header">
+										<span class="from">
+									    	Will Parker
+									  </span>
+										<span class="time">
+									    	6 min
+									  </span>
+									</span>
+                  <span class="message">
+                    This is a example message. This is a example message. This is a example message. This is a example message.
+                  </span>
+                </a>
+              </li>
+							<li>
+                <a class="dropdown-menu-sub-footer">View all messages</a>
+							</li>
+						</ul>
+					</li>
+					<!-- end: Message Dropdown -->
+          {{> accountInfo}}
+				</ul>
+			</div>
+			<!-- end: Header Menu -->
+		</div>
+	</header>
+	<!-- end: Header -->
+</template>
+
+<template name="admHeader">
+  <!-- Start of Admin Header -->
+	<header class="navbar">
+		<div class="container">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".sidebar-nav.nav-collapse">
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			</button>
+			<a id="main-menu-toggle" class="hidden-xs open"><i class="fa fa-bars"></i></a>
+      <a class="navbar-brand col-md-2 col-sm-1 col-xs-2" href="{{pathFor 'index'}}"><span>NVQhq</span></a>
+			<!-- start: Header Menu -->
+			<div class="nav-no-collapse header-nav">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-warning"></i>
+							<span class="number">1</span>
+						</a>
+						<ul class="dropdown-menu notifications">
+							<li class="dropdown-menu-title">
+								<span>You have 1 notifications</span>
+							</li>
+							<li>
+                <a href="#">
+									<span class="icon blue"><i class="fa fa-user"></i></span>
+									<span class="message">New user registration</span>
+									<span class="time">yesterday</span>
+                </a>
+              </li>
+              <li class="dropdown-menu-sub-footer">
+                <a>View all notifications</a>
+							</li>
+						</ul>
+					</li>
+					<!-- start: Notifications Dropdown -->
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-tasks"></i>
+							<span class="number">1</span>
+						</a>
+						<ul class="dropdown-menu tasks">
+							<li>
+								<span class="dropdown-menu-title">You have 1 task in progress</span>
+              </li>
+							<li>
+                <a href="#">
+									<span class="header">
+										<span class="title">iOS Development</span>
+										<span class="percent"></span>
+									</span>
+                  <div class="taskProgress progressSlim progressBlue">80</div>
+                </a>
+              </li>
+							<li>
+                <a class="dropdown-menu-sub-footer">View all tasks</a>
+							</li>
+						</ul>
+					</li>
+					<!-- end: Notifications Dropdown -->
+					<!-- start: Message Dropdown -->
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-envelope"></i>
+							<span class="number">1</span>
+						</a>
+						<ul class="dropdown-menu messages">
+							<li>
+								<span class="dropdown-menu-title">You have 1 message</span>
+							</li>
+              <li>
+                <a href="#">
+                  <span class="avatar"><img src="/imgs/avatars/example.png" alt="Avatar"></span>
+									<span class="header">
+										<span class="from">
+									    	Will Parker
+									  </span>
+										<span class="time">
+									    	6 min
+									  </span>
+									</span>
+                  <span class="message">
+                    This is a example message. This is a example message. This is a example message. This is a example message.
+                  </span>
+                </a>
+              </li>
+							<li>
+                <a class="dropdown-menu-sub-footer">View all messages</a>
+							</li>
+						</ul>
+					</li>
+					<!-- end: Message Dropdown -->
+          {{> accountInfo}}
+				</ul>
+			</div>
+			<!-- end: Header Menu -->
+		</div>
+	</header>
+	<!-- end: Header -->
 </template>
 
 <template name="accountInfo">
   {{#if currentUser}}
-    <ul id="accountInfo" class="nav navbar-nav navbar-right loggedin">
-        {{> accountLoggedIn}}
-    </ul>
+    {{> accountLoggedIn}}
   {{else}}
-    <ul id="accountInfo" class="nav navbar-nav navbar-right loggedout">
-        {{> accountLoggedOut}}
-    </ul>
+    {{> accountLoggedOut}}
   {{/if}}
 </template>
 
 <template name="accountLoggedIn">
-  {{#if loggingIn}}
-    <li><a>Logging in...</a></li>
-  {{else}}
+    <!-- start: User Dropdown -->
     <li class="dropdown">
-        <a class="data-toggle" data-toggle="dropdown" href="#">
-            <div class="avatar"><img src="/imgs/avatars/example.png" alt="User Avatar"></div>
-            <div class="user_details">
-                <span class="welcome">Welcome!</span>
-                <span class="name">{{currentUser.profile.login}}</span>
-            </div>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-            <li><a href="#"><i class="fa fa-envelope"></i> Messages</a></li>
-            <li><a id="logout" href="#"><i class="fa fa-off"></i> Logout</a></li>
-        </ul>
+      <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
+        <div class="avatar"><img src="/imgs/avatars/example.png" alt="Avatar"></div>
+        <div class="user">
+          <span class="hello">Welcome!</span>
+          <span class="name">{{currentUser.profile.name}}</span>
+        </div>
+      </a>
+      <ul class="dropdown-menu">
+        {{#if isInRole 'admin' organisation._id}}
+        <li><a href="{{pathFor 'admProfile'}}"><i class="fa fa-user"></i> Profile</a></li>
+        {{/if}}
+        {{#if isInRole 'learner' organisation._id}}
+        <li><a href="{{pathFor 'lnrProfile'}}"><i class="fa fa-user"></i> Profile</a></li>
+        {{/if}}
+        <li><a id="logout" href="#"><i class="fa fa-off"></i> Logout</a></li>
+      </ul>
     </li>
-  {{/if}}
+    <!-- end: User Dropdown -->
 </template>
 
 <template name="accountLoggedOut">
     <li class="dropdown">
-        <a class="data-toggle" data-toggle="dropdown" href="#">
-            Login
-            <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a id="loginWithFacebook" href="#">Login with Facebook</a></li>
-            <!-- <li><a id="loginWithTwitter" href="#">Login with Twitter</a></li>
-            <li><a id="loginWithGoogle" href="#">Login with Google</a></li>-->
-            <li><a id="login" href="#">Login</a></li>
-        </ul>
+      <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
+        <div class="user">
+          <span class="hello">Login or </span>
+          <span class="name">Register</span>
+        </div>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="{{pathFor 'login'}}"><i class="fa fa-user"></i> login</a></li>
+      </ul>
     </li>
 </template>

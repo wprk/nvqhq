@@ -1,0 +1,54 @@
+<template name="login">
+  <div class="row">
+    <div class="login-box">
+      <div class="header">
+        Login to NVQhq
+      </div>
+      <p>
+        <a id="loginWithFacebook" class="btn btn-facebook"><span>Login via Facebook</span></a>
+      </p>
+      <p>	
+        <a id="loginWithGoogle" class="btn btn-google"><span>Login via Google</span></a>	
+      </p>
+      
+      <div class="text-with-hr">
+        <span>or use your email</span>
+      </div>
+      
+      <form class="form-horizontal login" action="#" method="post">
+        
+        <fieldset class="col-sm-12">
+          <div class="form-group">
+            <div class="controls row">
+              <div class="input-group col-sm-12">	
+                <input type="text" class="form-control" id="username" placeholder="Username or E-mail"/>
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              </div>	
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="controls row">
+              <div class="input-group col-sm-12">	
+                <input type="password" class="form-control" id="password" placeholder="Password"/>
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              </div>	
+            </div>
+          </div>
+          
+          <div class="row">
+            <button id="login" type="submit" class="btn btn-lg btn-primary col-xs-12">Login</button>
+          </div>
+          
+        </fieldset>	
+        
+      </form>
+      
+      <a class="pull-left" href="#">Forgot Password?</a>
+      <a class="pull-right" href="{{pathFor 'selectRegistration'}}">Sign Up!</a>
+      
+      <div class="clearfix"></div>				
+      
+    </div>
+  </div><!--/row-->
+</template>

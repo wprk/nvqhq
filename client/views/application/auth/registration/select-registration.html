@@ -1,0 +1,16 @@
+<template name="selectRegistration">
+  <p>If you are a training provider please select Organisation. If you wish to join an existing organisation select the organisation from the dropdown and 
+    choose your desired user type. You will need to be authorised by the organisation before you can use our site.</p>
+  
+  <!-- Organisation -->
+  <ul>
+    <li><a href="{{pathFor 'organisationRegistration'}}">Organisation</a></li>
+  </ul>
+  <!-- User Types -->
+  <ul>
+    <li><a href="{{pathFor 'admRegistration'}}">Admin</a></li>
+    <li><a href="#">Assessor</a></li>
+    <li><a href="#">Employer</a></li>
+    <li><a href="{{pathFor 'lnrRegistration'}}">Learner</a></li>
+  </ul>
+</template>

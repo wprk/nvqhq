@@ -1,0 +1,11 @@
+<template name="blankLayout">
+  <!-- Start of Blank Template -->
+  <div class="container">
+    <div class="row">
+      <div id="content" class="col-sm-12 full">
+        {{> bootstrapErrors}}
+        {{> yield 'blankContent'}}
+      </div>	
+    </div><!--/row-->		
+  </div><!--/container-->
+</template>
