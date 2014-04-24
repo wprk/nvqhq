@@ -243,16 +243,16 @@
       </a>
       <ul class="dropdown-menu">
         {{#if isInRole 'admin' organisation._id}}
-        <li><a href="{{pathFor 'admProfile'}}"><i class="fa fa-user"></i>Admin Profile</a></li>
+        <li><a href="{{pathFor 'admProfile'}}"><i class="fa fa-user"></i> Admin Profile</a></li>
         {{/if}}
         {{#if isInRole 'assessor' organisation._id}}
-        <li><a href="{{pathFor 'assProfile'}}"><i class="fa fa-user"></i>Assessor Profile</a></li>
+        <li><a href="{{pathFor 'assProfile'}}"><i class="fa fa-user"></i> Assessor Profile</a></li>
         {{/if}}
         {{#if isInRole 'assessor' organisation._id}}
-        <li><a href="{{pathFor 'empProfile'}}"><i class="fa fa-user"></i>Employer Profile</a></li>
+        <li><a href="{{pathFor 'empProfile'}}"><i class="fa fa-user"></i> Employer Profile</a></li>
         {{/if}}
         {{#if isInRole 'learner' organisation._id}}
-        <li><a href="{{pathFor 'lnrProfile'}}"><i class="fa fa-user"></i>Learner Profile</a></li>
+        <li><a href="{{pathFor 'lnrProfile'}}"><i class="fa fa-user"></i> Learner Profile</a></li>
         {{/if}}
         <li><a id="logout" href="#"><i class="fa fa-off"></i> Logout</a></li>
       </ul>
