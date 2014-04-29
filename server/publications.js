@@ -28,6 +28,10 @@ Meteor.publish("courses", function () {
 });
 
 Meteor.publish("organisations", function () {
+  return Organisations.find();
+});
+
+Meteor.publish("organisation", function () {
   if (this.userId) {
     user = Meteor.users.findOne({_id: this.userId});
     organisation = Organisations.find({

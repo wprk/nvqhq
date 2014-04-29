@@ -1,15 +1,19 @@
 Accounts.onCreateUser(function(options, user) {
   var email, oldUser, service;
-  var userOrganisation = Organisations.findOne();
+
+  if (options.profile)
+
+  var userOrganisation = options.profile.organisation
+
   if (user.profile == null) {
     user.profile = {};
+    if (options.profile != null) {
+      user.profile.name = options.profile.name;
+      user.profile.organisation = options.profile.organisation;
+      user.profile.courses = options.profile.courses;
+    }
   }
-  user.profile.organisation = {
-    _id: userOrganisation._id,
-    verified: 0,
-    verified_by: 'user'
-  };
-  user.profile.courses = [Courses.find({}, {fields: {'_id': 1}}).fetch()[0]];
+
   if (user.services != null) {
     service = _.keys(user.services)[0];
     email = user.services[service].email;
@@ -39,6 +43,7 @@ Accounts.onCreateUser(function(options, user) {
             throw new Meteor.Error(500, "" + service + " account has no email attached");
           }
           user.profile.name = user.services[service].name;
+          user.profile.organisation = options.profile.organisation;
         }
       }
     }

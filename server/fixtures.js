@@ -66,5 +66,17 @@ Meteor.startup(function () {
       courses: Courses.find({}, {"_id": 1}).fetch(),
       paymentDetails: []
     });
+    Organisations.insert({
+      name: 'Test Organisation 2',
+      contact: [],
+      courses: Courses.find({}, {"_id": 1}).fetch(),
+      paymentDetails: []
+    });
+    Organisations.insert({
+      name: 'Test Organisation 3',
+      contact: [],
+      courses: Courses.find({}, {"_id": 1}).fetch(),
+      paymentDetails: []
+    });
   }
 });

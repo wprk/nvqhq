@@ -1,10 +1,21 @@
 <template name="admRegistration">
-  <!-- Start of Admin Registration -->
-  <form id="adm-register-form" action="action">
-    <div>
-      <input type="email" id="account-email" />
-      <input type="password" id="account-password" />
-      <input type="submit" id="create-account" value="Create an Account" />
+  <!-- Start of Learner Registration -->
+  <div class="row">
+    <div class="login-box">
+      <div class="header">
+        Create an Admin Account
+      </div>
+      
+        {{> form_admRegistration}}	
+      
+      <p>
+        <a id="loginWithFacebook" class="btn btn-facebook"><span>Register via Facebook</span></a>
+      </p>		
+      
+      <p>
+        <a id="loginWithGoogle" class="btn btn-google"><span>Register via Google</span></a>
+      </p>		
+
     </div>
-  </form>
+  </div><!--/row-->
 </template>
