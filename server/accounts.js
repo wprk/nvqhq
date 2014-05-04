@@ -13,6 +13,12 @@ Accounts.onCreateUser(function(options, user) {
     }
   }
 
+  // Add organisation to user - Remove this for production
+  if (user.profile.organisation == null) {
+    user.profile.organisation = Organisations.find().fetch()[0];
+  }
+
+
   if (user.services != null) {
     service = _.keys(user.services)[0];
     email = user.services[service].email;
