@@ -11,6 +11,7 @@
         </div>
       </div>
       <div class="box-content">
+        {{#if userCourses.count}}
         <table class="table">
           <thead>
             <tr>
@@ -21,11 +22,16 @@
             </tr>
           </thead>   
           <tbody>
-            {{#each courses}}
-              {{> admListCoursesItem}}
+            {{#each organisationCourses}}
+              {{#with organisationCourseData}}
+                {{> admListCoursesItem}}
+              {{/with}}
             {{/each}}                                  
           </tbody>
-        </table>   
+        </table>  
+        {{else}}
+          <p>Your organisation has not yet subscribed to any courses. Contact your organisation administrator to get started.</p>
+        {{/if}}
       </div>
     </div>
   </div><!--/col-->

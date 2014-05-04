@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="box-content">
-        {{#if courses.count}}
+        {{#if userCourses.count}}
         <table class="table">
           <thead>
             <tr>
@@ -21,8 +21,10 @@
             </tr>
           </thead>   
           <tbody>
-            {{#each courses}}
-              {{> lnrListCoursesItem}}
+            {{#each userCourses}}
+              {{#with userCoursesData}}
+                {{> lnrListCoursesItem}}
+              {{/with}}
             {{/each}}
           </tbody>
         </table>

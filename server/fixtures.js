@@ -63,20 +63,39 @@ Meteor.startup(function () {
     Organisations.insert({
       name: 'Test Organisation',
       contact: [],
-      courses: Courses.find({}, {"_id": 1}).fetch(),
       paymentDetails: []
     });
     Organisations.insert({
       name: 'Test Organisation 2',
       contact: [],
-      courses: Courses.find({}, {"_id": 1}).fetch(),
       paymentDetails: []
     });
     Organisations.insert({
       name: 'Test Organisation 3',
       contact: [],
-      courses: Courses.find({}, {"_id": 1}).fetch(),
       paymentDetails: []
     });
   }
+
+  if (OrganisationCourses.find().count() === 0) {
+    var cursor = Organisations.find();
+    cursor.forEach(function(organisation) {
+      OrganisationCourses.insert({
+        organisation_id: organisation._id,
+        course_id: Courses.find({}, {"_id": 1}).fetch(),
+        status: true
+      });
+    });
+  }
+
+  // if (UserCourses.find().count() === 0) {
+  //   var cursor = Users.find();
+  //   cursor.forEach(function(user) {
+  //     UserCourses.insert({
+  //       user_id: organisation._id,
+  //       course_id: Courses.find({}, {"_id": 1}).fetch(),
+  //       status: true
+  //     });
+  //   });
+  // }
 });

@@ -10,7 +10,6 @@ Accounts.onCreateUser(function(options, user) {
     if (options.profile != null) {
       user.profile.name = options.profile.name;
       user.profile.organisation = options.profile.organisation;
-      user.profile.courses = options.profile.courses;
     }
   }
 
@@ -54,6 +53,6 @@ Accounts.onCreateUser(function(options, user) {
 // When new user added set roles
 Meteor.users.find().observe({
   added: function(user) {
-    Roles.addUsersToRoles(user._id, ['learner'], user.profile.organisation._id);
+    Roles.addUsersToRoles(user._id, ['admin'], user.profile.organisation._id);
   }
 });
