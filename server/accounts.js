@@ -15,7 +15,7 @@ Accounts.onCreateUser(function(options, user) {
 
   // Add organisation to user - Remove this for production
   if (user.profile.organisation == null) {
-    user.profile.organisation = Organisations.find().fetch()[0];
+    user.profile.organisation = Organisations.findOne().fetch()[0];
   }
 
 

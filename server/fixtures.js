@@ -78,12 +78,15 @@ Meteor.startup(function () {
   }
 
   if (OrganisationCourses.find().count() === 0) {
-    var cursor = Organisations.find();
-    cursor.forEach(function(organisation) {
-      OrganisationCourses.insert({
-        organisation_id: organisation._id,
-        course_id: Courses.find({}, {"_id": 1}).fetch(),
-        status: true
+    var organisations = Organisations.find();
+    var courses = Courses.find();
+    organisations.forEach(function(organisation) {
+      courses.forEach(function (course) {
+        OrganisationCourses.insert({
+          organisation_id: organisation._id,
+          course_id: course._id,
+          status: true
+        });
       });
     });
   }
