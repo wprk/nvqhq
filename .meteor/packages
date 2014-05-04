@@ -8,7 +8,6 @@ insecure
 coffeescript
 iron-router
 spin
-accounts-ui
 accounts-password
 accounts-twitter
 accounts-google
@@ -23,3 +22,4 @@ modernizr-meteor
 roles
 bootstrap-errors
 jquery
+accounts-base
