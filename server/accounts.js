@@ -1,4 +1,7 @@
 Accounts.onCreateUser(function(options, user) {
+  console.log(options);
+  console.log(user);
+  
   var email, oldUser, service; 
 
   if (options.profile)
@@ -17,7 +20,7 @@ Accounts.onCreateUser(function(options, user) {
   if (user.profile.organisation == null) {
     organisation = Organisations.find({}, {'limit': 1}).fetch()[0];
     console.log(organisation);
-    user.profile.organisation = organisation;
+    user.profile.organisation = organisation; 
   }
 
 
