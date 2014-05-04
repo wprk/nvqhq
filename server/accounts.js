@@ -1,12 +1,5 @@
 Accounts.onCreateUser(function(options, user) {
-  console.log(options);
-  console.log(user);
-
   var email, oldUser, service; 
-
-  if (options.profile)
-
-  var userOrganisation = options.profile.organisation
 
   if (user.profile == null) {
     user.profile = {};
@@ -15,14 +8,6 @@ Accounts.onCreateUser(function(options, user) {
       user.profile.organisation = options.profile.organisation;
     }
   }
-
-  // Add organisation to user - Remove this for production
-  if (user.profile.organisation == null) {
-    organisation = Organisations.findOne().fetch()[0];
-    console.log(organisation);
-    user.profile.organisation = organisation; 
-  }
-
 
   if (user.services != null) {
     service = _.keys(user.services)[0];
@@ -53,7 +38,7 @@ Accounts.onCreateUser(function(options, user) {
             throw new Meteor.Error(500, "" + service + " account has no email attached");
           }
           user.profile.name = user.services[service].name;
-          user.profile.organisation = options.profile.organisation;
+          user.profile.organisation = Organisations.find().fetch()[0];
         }
       }
     }
