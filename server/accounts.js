@@ -1,5 +1,5 @@
 Accounts.onCreateUser(function(options, user) {
-  var email, oldUser, service;
+  var email, oldUser, service; 
 
   if (options.profile)
 
