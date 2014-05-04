@@ -38,7 +38,7 @@ Accounts.onCreateUser(function(options, user) {
             throw new Meteor.Error(500, "" + service + " account has no email attached");
           }
           user.profile.name = user.services[service].name;
-          user.profile.organisation = Organisations.find().fetch()[0];
+          user.profile.organisation = Organisations.find({}, {'fields': {'_id':1}}).fetch()[0];
         }
       }
     }
