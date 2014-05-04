@@ -1,7 +1,7 @@
 Accounts.onCreateUser(function(options, user) {
   console.log(options);
   console.log(user);
-  
+
   var email, oldUser, service; 
 
   if (options.profile)
@@ -18,7 +18,7 @@ Accounts.onCreateUser(function(options, user) {
 
   // Add organisation to user - Remove this for production
   if (user.profile.organisation == null) {
-    organisation = Organisations.find({}, {'limit': 1}).fetch()[0];
+    organisation = Organisations.findOne().fetch()[0];
     console.log(organisation);
     user.profile.organisation = organisation; 
   }
