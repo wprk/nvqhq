@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="box-content">
-        {{#if userCourses.count}}
+        {{#if organisationCourses.count}}
         <table class="table">
           <thead>
             <tr>
@@ -23,7 +23,7 @@
           </thead>   
           <tbody>
             {{#each organisationCourses}}
-              {{#with organisationCourseData}}
+              {{#with courseData}}
                 {{> admListCoursesItem}}
               {{/with}}
             {{/each}}                                  
