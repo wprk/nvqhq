@@ -22,10 +22,10 @@
           </thead>   
           <tbody>
             {{#each userCourses}}
-              {{#with userCourseData}}
+              {{#with courseData}}
                 {{> lnrListCoursesItem}}
               {{/with}}
-            {{/each}}
+            {{/each}} 
           </tbody>
         </table>
         {{else}}
