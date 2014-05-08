@@ -9,12 +9,11 @@ Template.lnrRegistration.events({
     password = $('input#password').val(),
     profile = {
     	name: firstName + ' ' + familyName,
-    	organisation: {
-    		id: $('input#organisationId').val(),
-    		verified: 0,
-    		verified_by: 0
-    	},
-    	courses: []
+        organisation: {
+            _id: $('select#organisationId').val(),
+            verified: 0,
+            verified_by: 0
+        }
     };
 
     Accounts.createUser({

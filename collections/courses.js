@@ -9,14 +9,9 @@ if (Meteor.isClient) {
   UI.registerHelper('organisationCourses', function() {
       return OrganisationCourses.find();
   });
-  UI.registerHelper('userCourseData', function() {
+  UI.registerHelper('courseData', function() {
   	var courseContent = this;
-	var courses = Courses.find({'_id': courseContent.course_id});
-    return _.extend(courseContent, _.omit(courses, '_id'));
-  });
-  UI.registerHelper('organisationCourseData', function() {
-  	var courseContent = this;
-	var courses = Courses.find({'_id': courseContent.organisation_id});
-    return _.extend(courseContent, _.omit(courses, '_id'));
+	  var course = Courses.findOne({'_id': courseContent.course_id});
+    return _.extend(courseContent, _.omit(course, '_id'));
   });
 }
