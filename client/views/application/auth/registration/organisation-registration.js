@@ -1,4 +1,4 @@
-Template.lnrRegistration.events({
+Template.organisationRegistration.events({
   "click #register": function (event) {
     event.preventDefault();
 
@@ -10,7 +10,7 @@ Template.lnrRegistration.events({
     profile = {
     	name: firstName + ' ' + familyName,
         organisation: {
-            _id: $('select#organisationId').val(),
+            _id: 0,
             verified: 0,
             verified_by: 0
         }
@@ -24,7 +24,7 @@ Template.lnrRegistration.events({
     }, function(error) {
         if (error) {
             Errors.throw('danger', error);
-            Router.go('lnrRegistration');
+            Router.go('admRegistration');
         }
     });
   }

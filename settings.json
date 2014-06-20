@@ -1,0 +1,8 @@
+{
+    "production": {
+        "MONGO_URL" : "mongodb://wprk:Y678wan@oceanic.mongohq.com:10019/nvqhq"
+    },
+    "development": {
+        "MONGO_URL" : "mongodb://wprk:Y678wan@oceanic.mongohq.com:10019/nvqhq"
+    }
+}

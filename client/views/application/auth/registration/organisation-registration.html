@@ -1,4 +1,26 @@
 <template name="organisationRegistration">
+  <!-- Start of Organisation Registration -->
+  <div class="row">
+    <div class="login-box">
+      <div class="header">
+        Create your organisation
+      </div>
+      
+        {{> form_superAdmRegistration}}	
+      
+      <p>
+        <a id="loginWithFacebook" class="btn btn-facebook"><span>Register via Facebook</span></a>
+      </p>		
+      
+      <p>
+        <a id="loginWithGoogle" class="btn btn-google"><span>Register via Google</span></a>
+      </p>		
+
+    </div>
+  </div><!--/row-->
+</template>
+
+<template name="closedOrganisationRegistration">
   <p>We are not accepting new organisations at this time</p>
   <!-- Create Lead Generation Form Here -->
 </template>

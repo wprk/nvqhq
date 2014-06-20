@@ -1,4 +1,4 @@
-Template.lnrRegistration.events({
+Template.admRegistration.events({
   "click #register": function (event) {
     event.preventDefault();
 
@@ -24,7 +24,7 @@ Template.lnrRegistration.events({
     }, function(error) {
         if (error) {
             Errors.throw('danger', error);
-            Router.go('lnrRegistration');
+            Router.go('admRegistration');
         }
     });
   }

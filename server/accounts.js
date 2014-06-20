@@ -1,3 +1,11 @@
+Accounts.validateNewUser(function (user) {
+  if ('password' in user.services)
+    return true;
+  // @todo: Alter bootstrap errors so they can be shown on the front end
+  console.log("Please register before attempting a third party login.");
+  throw new Meteor.Error(403, "Please register before attempting a third party login.");
+});
+
 Accounts.onCreateUser(function(options, user) {
   var email, oldUser, service; 
 

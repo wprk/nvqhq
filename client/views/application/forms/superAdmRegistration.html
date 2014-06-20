@@ -1,0 +1,19 @@
+<template name="form_superAdmRegistration">
+    <form class="form-horizontal register">
+        <fieldset class="col-sm-12">
+            {{> formElement_firstName}}
+            {{> formElement_familyName}}
+            {{> formElement_email}}
+            {{> formElement_password}}
+            {{> formElement_confirmPassword}}
+
+            <div class="row">
+                <button id="register" type="submit" class="btn btn-primary btn-lg col-xs-12">Create Account!</button>
+            </div>
+
+            <div class="text-with-hr">
+                <span>or use a social network account</span>
+            </div>
+        </fieldset> 
+    </form>
+</template>
