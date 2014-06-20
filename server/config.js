@@ -1,30 +1,58 @@
 Meteor.startup(function () {
   // code to run on server at startup
   try {
-    ServiceConfiguration.configurations.remove({
-      service: "facebook"
-    });
-    ServiceConfiguration.configurations.insert({
-      "service" : "facebook",
-      "appId" : "269805096526069",
-      "secret" : "d5f20aad201ef0c2043713c92120b638"
-    });
-    ServiceConfiguration.configurations.remove({
-      service: "twitter"
-    });
-    ServiceConfiguration.configurations.insert({
-      "service" : "twitter",
-      "consumerKey" : "p7UzoNxKFqBLXIPVP7GsDxabD",
-      "secret" : "9jl8uSBRkuIjnxw6ivISN6NQbGZTMfMit1geCB6dXAV5X0PMz6"
-    });
-    ServiceConfiguration.configurations.remove({
-      service: "google"
-    });
-    ServiceConfiguration.configurations.insert({
-      "service" : "google",
-      "clientId" : "181059737409-5cfcr237ab8flcbgeq0d0kesp701m7uk.apps.googleusercontent.com",
-      "secret" : "20Rj2qOgSbcQF69qVOPxrFsA"
-    });
+    enviroment = process.env.NODE_ENV;
+    if (enviroment == 'production') {
+      ServiceConfiguration.configurations.remove({
+        service: "facebook"
+      });
+      ServiceConfiguration.configurations.insert({
+        "service" : "facebook",
+        "appId" : "269805096526069",
+        "secret" : "d5f20aad201ef0c2043713c92120b638"
+      });
+      // ServiceConfiguration.configurations.remove({
+      //   service: "twitter"
+      // });
+      // ServiceConfiguration.configurations.insert({
+      //   "service" : "twitter",
+      //   "consumerKey" : "p7UzoNxKFqBLXIPVP7GsDxabD",
+      //   "secret" : "9jl8uSBRkuIjnxw6ivISN6NQbGZTMfMit1geCB6dXAV5X0PMz6"
+      // });
+      ServiceConfiguration.configurations.remove({
+        service: "google"
+      });
+      ServiceConfiguration.configurations.insert({
+        "service" : "google",
+        "clientId" : "181059737409-5cfcr237ab8flcbgeq0d0kesp701m7uk.apps.googleusercontent.com",
+        "secret" : "20Rj2qOgSbcQF69qVOPxrFsA"
+      });
+    } else {
+      ServiceConfiguration.configurations.remove({
+        service: "facebook"
+      });
+      ServiceConfiguration.configurations.insert({
+        "service" : "facebook",
+        "appId" : "292648167575095",
+        "secret" : "3e250bc62928b50a7f33377cb2db591f"
+      });
+      // ServiceConfiguration.configurations.remove({
+      //   service: "twitter"
+      // });
+      // ServiceConfiguration.configurations.insert({
+      //   "service" : "twitter",
+      //   "consumerKey" : "p7UzoNxKFqBLXIPVP7GsDxabD",
+      //   "secret" : "9jl8uSBRkuIjnxw6ivISN6NQbGZTMfMit1geCB6dXAV5X0PMz6"
+      // });
+      ServiceConfiguration.configurations.remove({
+        service: "google"
+      });
+      ServiceConfiguration.configurations.insert({
+        "service" : "google",
+        "clientId" : "181059737409-4ljduubsrrimbifgcbhj1ti93l6600ai.apps.googleusercontent.com",
+        "secret" : "7W5D5pbsh7euajSJRaw3mWhM"
+      });
+    }
   } catch(error) {
     console.log(error.message);
   }
