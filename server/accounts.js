@@ -7,7 +7,7 @@ Accounts.validateNewUser(function (user) {
 });
 
 Accounts.onCreateUser(function(options, user) {
-  var email, oldUser, service; 
+  var email, oldUser, service;
 
   if (user.profile == null) {
     user.profile = {};
@@ -45,8 +45,6 @@ Accounts.onCreateUser(function(options, user) {
           } else {
             throw new Meteor.Error(500, "" + service + " account has no email attached");
           }
-          user.profile.name = user.services[service].name;
-          user.profile.organisation = Organisations.find({}, {'fields': {'_id':1}}).fetch()[0];
         }
       }
     }
