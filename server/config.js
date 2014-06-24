@@ -1,5 +1,11 @@
 Meteor.startup(function () {
   enviroment = process.env.NODE_ENV;
+
+  Accounts.config({
+    sendVerificationEmail: true,
+    loginExpirationInDays: 1
+  });  
+  
   try {
     if (enviroment == 'production') {
       ServiceConfiguration.configurations.remove({
