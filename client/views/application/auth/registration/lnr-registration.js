@@ -7,16 +7,17 @@ Template.lnrRegistration.events({
     username = firstName + '.' + familyName,
     email = $('input#email').val(),
     password = $('input#password').val(),
+    organisation_id = $('select#organisationId').val(),
     profile = {
     	name: firstName + ' ' + familyName,
         organisation: {
-            _id: $('select#organisationId').val(),
+            _id: organisation_id,
             verified: 0,
             verified_by: 0
         }
     };
 
-    Accounts.createUser({
+    user_id = Accounts.createUser({
     	email: email,
     	username: username,
     	password: password,
@@ -27,5 +28,7 @@ Template.lnrRegistration.events({
             Router.go('lnrRegistration');
         }
     });
+
+    Roles.addUsersToRoles(user_id, ['learner'], organisation_id);
   }
 });
