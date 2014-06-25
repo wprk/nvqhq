@@ -16,7 +16,7 @@ Template.organisationRegistration.events({
         }
     };
 
-    Accounts.createUser({
+    user_id = Accounts.createUser({
     	email: email,
     	username: username,
     	password: password,
@@ -27,5 +27,7 @@ Template.organisationRegistration.events({
             Router.go('admRegistration');
         }
     });
+
+    Roles.addUsersToRoles(user_id, ['superadmin'], 'NOT_YET_SET');
   }
 });

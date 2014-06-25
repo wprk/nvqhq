@@ -53,8 +53,8 @@ Accounts.onCreateUser(function(options, user) {
 });
 
 // When new user added set roles
-Meteor.users.find().observe({
-  added: function(user) {
-    Roles.addUsersToRoles(user._id, ['admin'], user.profile.organisation._id);
-  }
-});
+// Meteor.users.find().observe({
+//   added: function(user) {
+//     Roles.addUsersToRoles(user._id, ['admin'], user.profile.organisation._id);
+//   }
+// });
