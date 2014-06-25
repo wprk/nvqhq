@@ -1,4 +1,6 @@
 Meteor.startup(function () {
+  // process.env.MAIL_URL="smtp://wprk14%40gmail.com:peterGRUBB14!!@smtp.gmail.com:465/"; 
+  
   enviroment = process.env.NODE_ENV;
 
   Accounts.config({
