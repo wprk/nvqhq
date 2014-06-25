@@ -43,6 +43,7 @@ Meteor.startup(function () {
         "appId" : "292648167575095",
         "secret" : "3e250bc62928b50a7f33377cb2db591f"
       });
+      // ServiceConfiguration.configurations.remove({
       //   service: "twitter"
       // });
       // ServiceConfiguration.configurations.insert({
