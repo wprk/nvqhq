@@ -242,6 +242,9 @@
         </div>
       </a>
       <ul class="dropdown-menu">
+        {{#if isInRole 'superadmin' organisation._id}}
+        <li><a href="{{pathFor 'admOrganisationView'}}"><i class="fa fa-user"></i> Organisation Profile</a></li>
+        {{/if}}
         {{#if isInRole 'admin' organisation._id}}
         <li><a href="{{pathFor 'admProfile'}}"><i class="fa fa-user"></i> Admin Profile</a></li>
         {{/if}}

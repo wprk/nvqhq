@@ -17,18 +17,16 @@ Template.lnrRegistration.events({
         }
     };
 
-    user_id = Accounts.createUser({
+    Accounts.createUser({
     	email: email,
     	username: username,
     	password: password,
     	profile: profile,
+        roles: {organisation_id: ["learner"]}
     }, function(error) {
         if (error) {
             Errors.throw('danger', error);
-            Router.go('lnrRegistration');
         }
     });
-
-    Roles.addUsersToRoles(user_id, ['learner'], organisation_id);
   }
 });

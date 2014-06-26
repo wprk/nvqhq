@@ -51,10 +51,3 @@ Accounts.onCreateUser(function(options, user) {
   }
   return user;
 });
-
-// When new user added set roles
-// Meteor.users.find().observe({
-//   added: function(user) {
-//     Roles.addUsersToRoles(user._id, ['admin'], user.profile.organisation._id);
-//   }
-// });

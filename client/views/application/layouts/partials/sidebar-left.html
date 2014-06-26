@@ -43,7 +43,7 @@
                 <span class="hidden-sm text"> Dashboard</span>
               </a>
             </li>
-            {{#if isInRole 'superadmin' organisation._id}}
+            {{#if isInRole 'superadmin'}}
             <li>
               <a href="{{pathFor 'admOrganisationView'}}">
                 <i class="fa fa-bar-chart-o"></i>
@@ -68,27 +68,4 @@
       <a href="#" id="main-menu-min" class="full visible-md visible-lg"><i class="fa fa-angle-double-left"></i></a>
     </div>
   <!-- end: Main Menu -->
-</template>
-
-<template name="superadmSidebarLeft">
-    <div id="sidebar-left" class="col-lg-2 col-sm-1 ">
-        <div class="sidebar-nav nav-collapse collapse navbar-collapse">
-          <ul class="nav main-menu">
-            {{#if isInRole 'superadmin' organisation._id}}
-            <li>
-              <a href="{{pathFor 'admOrganisationNew'}}">
-                <i class="fa fa-bar-chart-o"></i>
-                <span class="hidden-sm text"> Organisation</span>
-              </a>
-            </li>
-            {{/if}}
-          </ul>
-        </div>
-      <a href="#" id="main-menu-min" class="full visible-md visible-lg"><i class="fa fa-angle-double-left"></i></a>
-    </div>
-  <!-- end: Main Menu -->
-</template>
-
-<template name="courseMenuItem">
-  <li><a href="#"><i class="fa fa-folder"></i><span class="hidden-sm text">{{type}} {{level}} in {{title}}</span></a></li>
 </template>

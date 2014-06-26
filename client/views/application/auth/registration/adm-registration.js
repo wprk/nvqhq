@@ -17,18 +17,16 @@ Template.admRegistration.events({
         }
     };
 
-    user_id = Accounts.createUser({
+    Accounts.createUser({
     	email: email,
     	username: username,
     	password: password,
     	profile: profile,
+        roles: {organisation_id: ["admin"]}
     }, function(error) {
         if (error) {
             Errors.throw('danger', error);
-            Router.go('admRegistration');
         }
     });
-
-    Roles.addUsersToRoles(user_id, ['admin'], organisation_id);
   }
 });

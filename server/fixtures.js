@@ -65,16 +65,16 @@ Meteor.startup(function () {
       contact: [],
       paymentDetails: []
     });
-    Organisations.insert({
-      name: 'Test Organisation 2',
-      contact: [],
-      paymentDetails: []
-    });
-    Organisations.insert({
-      name: 'Test Organisation 3',
-      contact: [],
-      paymentDetails: []
-    });
+    // Organisations.insert({
+    //   name: 'Test Organisation 2',
+    //   contact: [],
+    //   paymentDetails: []
+    // });
+    // Organisations.insert({
+    //   name: 'Test Organisation 3',
+    //   contact: [],
+    //   paymentDetails: []
+    // });
   }
 
   if (OrganisationCourses.find().count() === 0) {
