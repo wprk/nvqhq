@@ -8,6 +8,6 @@
     "jquery-ui-bootstrap": {},
     "modernizr-meteor": {},
     "roles": {},
-    "jquery-steps": {}
+    "wait-on-lib": {}
   }
 }

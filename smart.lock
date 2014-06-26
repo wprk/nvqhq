@@ -10,7 +10,7 @@
       "jquery-ui-bootstrap": {},
       "modernizr-meteor": {},
       "roles": {},
-      "jquery-steps": {}
+      "wait-on-lib": {}
     },
     "packages": {
       "less-bootstrap-3": {
@@ -53,10 +53,10 @@
         "tag": "v1.2.10",
         "commit": "7ccb35de0a6cb0c9a0c3666badd04757e39c09a6"
       },
-      "jquery-steps": {
-        "git": "https://github.com/aashuagg/jquery-steps.git",
-        "tag": "v0.0.7",
-        "commit": "43b3dd3fa54a8701c1c02f7b0606f3ff600732aa"
+      "wait-on-lib": {
+        "git": "https://github.com/DerMambo/wait-on-lib.git",
+        "tag": "v0.0.3",
+        "commit": "ee83a431019b59c341903c3f732ff3d8d038a8ce"
       },
       "jquery-ui": {
         "git": "https://github.com/TimHeckel/meteor-jquery-ui.git",

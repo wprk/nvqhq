@@ -23,4 +23,4 @@ roles
 bootstrap-errors
 jquery
 accounts-base
-jquery-steps
+wait-on-lib
