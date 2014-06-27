@@ -62,20 +62,11 @@ Meteor.startup(function () {
 
   if (Organisations.find().count() === 0) {
     Organisations.insert({
-      name: 'Test Organisation',
-      contact: [],
-      paymentDetails: []
+      fullname: 'Test Organisation',
+      nickname: 'Tester 1',
+      contact: {},
+      paymentDetails: {}
     });
-    // Organisations.insert({
-    //   name: 'Test Organisation 2',
-    //   contact: [],
-    //   paymentDetails: []
-    // });
-    // Organisations.insert({
-    //   name: 'Test Organisation 3',
-    //   contact: [],
-    //   paymentDetails: []
-    // });
   }
 
   if (OrganisationCourses.find().count() === 0) {

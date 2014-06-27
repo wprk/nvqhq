@@ -3,26 +3,26 @@ Template.admOrganisationSetupWizard.steps = function() {
     id: 'step-one',
     title: 'Name',
     template: 'admOrganisationSetupStepOne',
-    formId: 'admOrganisationSetupStepOneForm'
+    formId: 'adm-organisation-setup-step-one-form'
   }, {
     id: 'step-two',
     title: 'Contact Details',
     template: 'admOrganisationSetupStepTwo',
-    formId: 'admOrganisationSetupStepTwoForm'
+    formId: 'adm-organisation-setup-step-two-form'
   }, {
     id: 'step-three',
     title: 'Courses',
     template: 'admOrganisationSetupStepThree',
-    formId: 'admOrganisationSetupStepThreeForm'
+    formId: 'adm-organisation-setup-step-three-form'
   }, {
     id: 'step-four',
     title: 'Payment Details',
     template: 'admOrganisationSetupStepFour',
-    formId: 'admOrganisationSetupStepFourForm'
+    formId: 'adm-organisation-setup-step-four-form'
   }, {
     id: 'step-five',
     title: 'Confirmation',
     template: 'admOrganisationSetupStepFive',
-    formId: 'admOrganisationSetupStepFiveForm'
+    formId: 'adm-organisation-setup-step-five-form'
   }];
 }
