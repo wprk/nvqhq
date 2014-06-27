@@ -15,14 +15,16 @@ Template.lnrRegistration.events({
             verified: 0,
             verified_by: 0
         }
-    };
+    },
+    roles = {};
+    roles[organisation_id] = ["learner"];
 
     Accounts.createUser({
     	email: email,
     	username: username,
     	password: password,
     	profile: profile,
-        roles: {organisation_id: ["learner"]}
+        roles: roles
     }, function(error) {
         if (error) {
             Errors.throw('danger', error);

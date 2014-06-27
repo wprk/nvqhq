@@ -8,7 +8,9 @@ Accounts.validateNewUser(function (user) {
 
 Accounts.onCreateUser(function(options, user) {
   var email, oldUser, service;
-
+  
+  user.roles = options.roles;
+  
   if (user.profile == null) {
     user.profile = {};
     if (options.profile != null) {

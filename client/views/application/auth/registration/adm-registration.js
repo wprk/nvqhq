@@ -15,14 +15,16 @@ Template.admRegistration.events({
             verified: 0,
             verified_by: 0
         }
-    };
+    },
+    roles = {};
+    roles[organisation_id] = ["admin"];
 
     Accounts.createUser({
     	email: email,
     	username: username,
     	password: password,
     	profile: profile,
-        roles: {organisation_id: ["admin"]}
+        roles: roles
     }, function(error) {
         if (error) {
             Errors.throw('danger', error);
