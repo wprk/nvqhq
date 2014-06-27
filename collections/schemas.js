@@ -20,15 +20,15 @@ var AddressSchema = new SimpleSchema({
     type: String,
     max: 8
   }
-}),
+});
 
-ContactSchema = new SimpleSchema({
+var ContactSchema = new SimpleSchema({
   address: {
     type: AddressSchema
   }
-}), 
+});
 
-PaymentDetailsSchema = new SimpleSchema({
+var PaymentDetailsSchema = new SimpleSchema({
   account_number: {
     type: String,
     min: 8,
@@ -39,29 +39,4 @@ PaymentDetailsSchema = new SimpleSchema({
     min: 6,
     max: 8
   }
-});
-
-Organisations = new Meteor.Collection('organisations', {
-	schema: {
-		fullname: {
-			type: String,
-			label: "Full Legal Name",
-			min: 2,
-			max: 100
-		},
-		nickname: {
-			type: String,
-			label: "Nickname",
-			max: 30,
-			optional: true
-		},
-		contact: {
-			type: ContactSchema,
-			optional: true
-		},
-		paymentDetails: {
-			type: PaymentDetailsSchema,
-			optional: true
-		}
-	}
 });

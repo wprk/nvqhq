@@ -25,51 +25,40 @@
 </template>
 
 <template name="admOrganisationSetupStepOne">
-    {{> quickForm
+    {{#autoForm
         collection="Organisations"
         id="adm-organisation-setup-step-one-form"
         class="form-horizontal"
-        buttonContent="Save and continue"
-        buttonClasses="btn btn-success pull-right"
     }}
+        {{> afQuickField name="fullname"}}
+        {{> afQuickField name="nickname"}}
+        <button type="submit" class="btn btn-success pull-right">Save and continue</button>
+    {{/autoForm}}
 </template>
 
 <template name="admOrganisationSetupStepTwo">
-    {{> quickForm
+    {{#autoForm
         collection="Organisations"
         id="adm-organisation-setup-step-one-form"
         class="form-horizontal"
-        buttonContent="Save and continue"
-        buttonClasses="btn btn-success pull-right"
     }}
+        {{> afQuickField name="address_line_1"}}
+        {{> afQuickField name="address_line_2"}}
+        {{> afQuickField name="city"}}
+        {{> afQuickField name="county"}}
+        {{> afQuickField name="postcode"}}
+        <button type="submit" class="btn btn-success pull-right">Save and continue</button>
+    {{/autoForm}}
 </template>
 
 <template name="admOrganisationSetupStepThree">
-    {{> quickForm
-        collection="Organisations"
-        id="adm-organisation-setup-step-one-form"
-        class="form-horizontal"
-        buttonContent="Save and continue"
-        buttonClasses="btn btn-success pull-right"
-    }}
+
 </template>
 
 <template name="admOrganisationSetupStepFour">
-    {{> quickForm
-        collection="Organisations"
-        id="adm-organisation-setup-step-one-form"
-        class="form-horizontal"
-        buttonContent="Save and continue"
-        buttonClasses="btn btn-success pull-right"
-    }}
+
 </template>
 
 <template name="admOrganisationSetupStepFive">
-    {{> quickForm
-        collection="Organisations"
-        id="adm-organisation-setup-step-one-form"
-        class="form-horizontal"
-        buttonContent="Save and continue"
-        buttonClasses="btn btn-success pull-right"
-    }}
+
 </template>

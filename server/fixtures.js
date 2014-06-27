@@ -59,15 +59,8 @@ Meteor.startup(function () {
       status: false
     });
   }
-
-  if (Organisations.find().count() === 0) {
-    Organisations.insert({
-      fullname: 'Test Organisation',
-      nickname: 'Tester 1',
-      contact: {},
-      paymentDetails: {}
-    });
-  }
+  
+  organisation_id = "NOT_YET_SET";
 
   if (OrganisationCourses.find().count() === 0) {
     var organisations = Organisations.find();
