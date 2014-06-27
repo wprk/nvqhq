@@ -1,4 +1,6 @@
-var AddressSchema = new SimpleSchema({
+var Schemas = {};
+
+Schemas.AddressDetails = new SimpleSchema({
   address_line_1: {
     type: String,
     max: 100
@@ -22,13 +24,13 @@ var AddressSchema = new SimpleSchema({
   }
 });
 
-var ContactSchema = new SimpleSchema({
+Schemas.ContactDetails = new SimpleSchema({
   address: {
-    type: AddressSchema
+    type: Schemas.AddressDetails
   }
 });
 
-var PaymentDetailsSchema = new SimpleSchema({
+Schemas.PaymentDetails = new SimpleSchema({
   account_number: {
     type: String,
     min: 8,
@@ -40,3 +42,42 @@ var PaymentDetailsSchema = new SimpleSchema({
     max: 8
   }
 });
+
+Schemas.OrganisationCourses = new SimpleSchema({
+  course_id: {
+    type: String,
+    label: "Course"
+  },
+  status: {
+    type: Boolean,
+    label: "Status"
+  }
+});
+
+Schemas.Organisations = new SimpleSchema({
+  fullname: {
+    type: String,
+    label: "Full Legal Name",
+    min: 2,
+    max: 100
+  },
+  nickname: {
+    type: String,
+    label: "Nickname",
+    min: 2,
+    max: 30,
+    optional: true
+  },
+  contact: {
+    type: Schemas.ContactDetails
+  },
+  courses: {
+    type: [Schemas.OrganisationCourses],
+    minCount: 1
+  },
+  paymentDetails: {
+    type: Schemas.PaymentDetails
+  }
+});
+
+Organisations.attachSchema(Schemas.Organisations);

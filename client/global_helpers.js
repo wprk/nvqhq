@@ -23,10 +23,10 @@ UI.registerHelper('isOrganisationConfigured', function() {
 
 //Courses
 UI.registerHelper('userCourses', function() {
-	return UserCourses.find();
+	return user.courses;
 });
 UI.registerHelper('organisationCourses', function() {
-	return OrganisationCourses.find();
+	return organisation.courses;
 });
 UI.registerHelper('courseData', function() {
 	var courseContent = this;

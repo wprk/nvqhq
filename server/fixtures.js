@@ -59,31 +59,4 @@ Meteor.startup(function () {
       status: false
     });
   }
-  
-  organisation_id = "NOT_YET_SET";
-
-  if (OrganisationCourses.find().count() === 0) {
-    var organisations = Organisations.find();
-    var courses = Courses.find();
-    organisations.forEach(function(organisation) {
-      courses.forEach(function (course) {
-        OrganisationCourses.insert({
-          organisation_id: organisation._id,
-          course_id: course._id,
-          status: true
-        });
-      });
-    });
-  }
-
-  // if (UserCourses.find().count() === 0) {
-  //   var cursor = Users.find();
-  //   cursor.forEach(function(user) {
-  //     UserCourses.insert({
-  //       user_id: organisation._id,
-  //       course_id: Courses.find({}, {"_id": 1}).fetch(),
-  //       status: true
-  //     });
-  //   });
-  // }
 });

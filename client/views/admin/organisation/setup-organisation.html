@@ -26,7 +26,7 @@
 
 <template name="admOrganisationSetupStepOne">
     {{#autoForm
-        collection="Organisations"
+        schema=schema
         id="adm-organisation-setup-step-one-form"
         class="form-horizontal"
     }}
@@ -38,8 +38,8 @@
 
 <template name="admOrganisationSetupStepTwo">
     {{#autoForm
-        collection="Organisations"
-        id="adm-organisation-setup-step-one-form"
+        schema=schema
+        id="adm-organisation-setup-step-two-form"
         class="form-horizontal"
     }}
         {{> afQuickField name="address_line_1"}}
@@ -52,13 +52,35 @@
 </template>
 
 <template name="admOrganisationSetupStepThree">
-
+    {{#autoForm
+        schema=schema
+        id="adm-organisation-setup-step-three-form"
+        class="form-horizontal"
+    }}
+        {{> afObjectField name="courses"}}
+        <button type="submit" class="btn btn-success pull-right">Save and continue</button>
+    {{/autoForm}}
 </template>
 
 <template name="admOrganisationSetupStepFour">
-
+    {{#autoForm
+        schema=schema
+        id="adm-organisation-setup-step-four-form"
+        class="form-horizontal"
+    }}
+        {{> afQuickField name="account_number"}}
+        {{> afQuickField name="sort_code"}}
+        <button type="submit" class="btn btn-success pull-right">Save and continue</button>
+    {{/autoForm}}
 </template>
 
 <template name="admOrganisationSetupStepFive">
-
+    {{#autoForm
+        schema=schema
+        id="adm-organisation-setup-step-five-form"
+        class="form-horizontal"
+    }}
+        {{> afQuickField name="terms_accepted"}}
+        <button type="submit" class="btn btn-success pull-right">Save and continue</button>
+    {{/autoForm}}
 </template>
