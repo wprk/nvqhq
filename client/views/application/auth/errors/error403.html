@@ -5,7 +5,7 @@
       
       <h1>403</h1>
       <h2>Hey! You shouldn't be here!</h2>
-      <p>You do not have the permissions to be here. Please <a href="{{pathFor 'login'}}">login</a>.</p>
+      <p>You do not have the permissions to view this page. {{#unless currentUser}} Please <a href="{{pathFor 'login'}}">login</a>.{{/unless}}</p>
       
       <div class="input-prepend input-group">
         <span class="input-group-addon clear"><i class="fa fa-search"></i></span>

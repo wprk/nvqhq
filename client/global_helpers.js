@@ -1,15 +1,16 @@
+var user = Meteor.user();
+var organisation = user.profile.organisation;
+
 // Organisations
 UI.registerHelper('organisations', function() {
 	organisations = Organisations.find();
 	return organisations;
 });
 UI.registerHelper('organisation', function() {
-	user = Meteor.user();
-	organisation = user.profile.organisation;
 	return organisation;
 });
-UI.registerHelper('isOrganisationConfigured', function(organisation) {
-	if(organisation) {
+UI.registerHelper('isOrganisationConfigured', function() {
+	if (organisation) {
 		if (organisation._id == "NOT_YET_SET") {
 			return false;
 		} else {
