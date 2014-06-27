@@ -6,6 +6,7 @@ Meteor.startup(function () {
     Roles.createRole('assessor');
     Roles.createRole('employer');
     Roles.createRole('learner');
+    Roles.createRole('user');
   }
 
   if (Courses.find().count() === 0) {

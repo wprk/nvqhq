@@ -1,5 +1,5 @@
 Template.lnrRegistration.events({
-	"click #register": function (event) {
+	"click #lnrRegister": function (event) {
 		event.preventDefault();
 
 		var firstName = $('input#firstName').val(),

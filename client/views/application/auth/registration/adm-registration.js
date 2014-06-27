@@ -1,5 +1,5 @@
 Template.admRegistration.events({
-	"click #register": function (event) {
+	"click #admRegister": function (event) {
 		event.preventDefault();
 
 		firstName = $('input#firstName').val(),

@@ -1,5 +1,5 @@
 Template.organisationRegistration.events({
-	"click #register": function (event) {
+	"click #orgRegister": function (event) {
 		event.preventDefault();
 
 		var firstName = $('input#firstName').val(),
