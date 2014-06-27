@@ -36,7 +36,7 @@
 	<div id="sidebar-left" class="col-lg-2 col-sm-1 ">
 		<div class="sidebar-nav nav-collapse collapse navbar-collapse">
 			<ul class="nav main-menu">
-				{{#unless isOrganisationConfigured organisation}}
+				{{#unless isOrganisationConfigured}}
 					<li>
 						<a href="{{pathFor 'admOrganisationView'}}">
 							<i class="fa fa-bar-chart-o"></i>
@@ -50,7 +50,7 @@
 							<span class="hidden-sm text"> Dashboard</span>
 						</a>
 					</li>
-				{{#if isInRole 'superadmin'}}
+				{{#if isInRole 'superadmin', 'organisation'}}
 					<li>
 						<a href="{{pathFor 'admOrganisationView'}}">
 							<i class="fa fa-bar-chart-o"></i>

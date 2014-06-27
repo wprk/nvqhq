@@ -15,13 +15,15 @@ Template.organisationRegistration.events({
 				verified_by: 0
 			}
 		};
+		roles = {};
+		roles["organisation"] = ["superadmin"];
 
 		Accounts.createUser({
 			email: email,
 			username: username,
 			password: password,
 			profile: profile,
-			roles: ["superadmin"]
+			roles: roles
 		}, function(error) {
 			if (error) {
 				Errors.throw('danger', error);
