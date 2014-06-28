@@ -14,14 +14,16 @@ Template.organisationRegistration.events({
 				verified: 0,
 				verified_by: 0
 			}
-		};
+		},
+		roles = {};
+		roles[Roles.GLOBAL_GROUP] = ["superadmin"];
 		
 		Accounts.createUser({
 			email: email,
 			username: username,
 			password: password,
 			profile: profile,
-			roles: ["superadmin"]
+			roles: roles
 		}, function(error) {
 			if (error) {
 				Errors.throw('danger', error);

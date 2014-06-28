@@ -16,16 +16,22 @@ Meteor.publish("organisation", function () {
 
 Meteor.methods({
   addOrganisation: function (organisationData) {
-    console.log(organisationData);
-    console.log(Meteor.Organisations);
-    Organisations.insert(organisationData, function(error) {
-      console.log(error);
-      // if (!error) {
-      //   return "Organisation Added";
-      // } else {
-      //   return "Organisation Creation Failed";
-      //   Meteor.Error(500, 'An unknown error occured. The organisation was not created.');
-      // }
-    });
+    var user = Meteor.user();
+    if (user && (user.profile.organisation._id === "NOT_YET_SET")) {
+      new_organisation_id = Organisations.insert(organisationData, function(error) {
+        if (!error) {
+          Meteor.users.update({_id: user._id}, 
+            {"$set" : {"profile.organisation._id": new_organisation_id}}
+          );
+          Roles.setUserRoles(user._id, [], Roles.GLOBAL_GROUP);
+          Roles.setUserRoles(user._id, ['superadmin', 'admin'], new_organisation_id);
+          return true;
+        } else {
+          Meteor.Error(500, 'An error occured. The organisation was not created.');
+        }
+      });
+    } else {
+      Meteor.Error(403, 'You do not have the correct permissions to perform this action.');
+    }
   }
 });

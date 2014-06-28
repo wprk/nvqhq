@@ -1,32 +1,45 @@
-var user = Meteor.user();
-var organisation = user.profile.organisation;
-
 // Organisations
 UI.registerHelper('organisations', function() {
 	organisations = Organisations.find();
 	return organisations;
 });
 UI.registerHelper('organisation', function() {
-	return organisation;
+	user = Meteor.user();
+	if (user) {
+		organisation = user.profile.organisation;
+		return organisation;
+	} else {
+		return false;
+	}
 });
 UI.registerHelper('isOrganisationConfigured', function() {
-	if (organisation) {
-		if (organisation._id == "NOT_YET_SET") {
-			return false;
-		} else {
-			return true;
+	user = Meteor.user();
+	if (user) {
+		organisation = user.profile.organisation;
+		if (organisation) {
+			if (organisation._id != "NOT_YET_SET") {
+				return true;
+			}
 		}
-	} else {
-		return false
 	}
+	return false
 });
 
 //Courses
 UI.registerHelper('userCourses', function() {
-	return user.courses;
+	user = Meteor.user();
+	courses = user.profile.courses;
+	return courses;
 });
 UI.registerHelper('organisationCourses', function() {
-	return organisation.courses;
+	user = Meteor.user();
+	if (user) {
+		organisation = Organisations.findOne({_id: user.profile.organisation._id});
+		courses = organisation.courses.courses;
+		return courses;
+	} else {
+		return false;
+	}
 });
 UI.registerHelper('courseData', function() {
 	var courseContent = this;

@@ -30,8 +30,8 @@
         id="adm-organisation-setup-step-one-form"
         class="form-horizontal"
     }}
-        {{> afQuickField name="fullname"}}
-        {{> afQuickField name="nickname"}}
+        {{> afQuickField name="profile.fullname"}}
+        {{> afQuickField name="profile.nickname"}}
         <button type="submit" class="btn btn-success pull-right">Save and continue</button>
     {{/autoForm}}
 </template>
@@ -42,11 +42,8 @@
         id="adm-organisation-setup-step-two-form"
         class="form-horizontal"
     }}
-        {{> afQuickField name="address_line_1"}}
-        {{> afQuickField name="address_line_2"}}
-        {{> afQuickField name="city"}}
-        {{> afQuickField name="county"}}
-        {{> afQuickField name="postcode"}}
+        {{> afQuickField name="contactDetails.phone"}}
+        {{> afQuickField name="contactDetails.address"}}
         <button type="submit" class="btn btn-success pull-right">Save and continue</button>
     {{/autoForm}}
 </template>
@@ -57,7 +54,7 @@
         id="adm-organisation-setup-step-three-form"
         class="form-horizontal"
     }}
-        {{> afObjectField name="courses"}}
+        {{> afQuickField name="courses"}}
         <button type="submit" class="btn btn-success pull-right">Save and continue</button>
     {{/autoForm}}
 </template>
@@ -68,8 +65,8 @@
         id="adm-organisation-setup-step-four-form"
         class="form-horizontal"
     }}
-        {{> afQuickField name="account_number"}}
-        {{> afQuickField name="sort_code"}}
+        {{> afQuickField name="paymentDetails.account_number"}}
+        {{> afQuickField name="paymentDetails.sort_code"}}
         <button type="submit" class="btn btn-success pull-right">Save and continue</button>
     {{/autoForm}}
 </template>

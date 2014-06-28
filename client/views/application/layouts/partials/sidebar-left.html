@@ -36,41 +36,32 @@
 	<div id="sidebar-left" class="col-lg-2 col-sm-1 ">
 		<div class="sidebar-nav nav-collapse collapse navbar-collapse">
 			<ul class="nav main-menu">
-				{{#unless isOrganisationConfigured}}
-					<li>
-						<a href="{{pathFor 'admOrganisationView'}}">
-							<i class="fa fa-bar-chart-o"></i>
-							<span class="hidden-sm text"> Organisation</span>
-						</a>
-					</li>
-				{{else}}
-					<li>
-						<a href="{{pathFor 'admDefaultDashboard'}}">
-							<i class="fa fa-bar-chart-o"></i>
-							<span class="hidden-sm text"> Dashboard</span>
-						</a>
-					</li>
-				{{#if isInRole 'superadmin' 'organisation'}}
-					<li>
-						<a href="{{pathFor 'admOrganisationView'}}">
-							<i class="fa fa-bar-chart-o"></i>
-							<span class="hidden-sm text"> Organisation</span>
-						</a>
-					</li>
+				<li>
+					<a href="{{pathFor 'admDefaultDashboard'}}">
+						<i class="fa fa-bar-chart-o"></i>
+						<span class="hidden-sm text"> Dashboard</span>
+					</a>
+				</li>
+				{{#if isInRole 'superadmin' organisation._id}}
+				<li>
+					<a href="{{pathFor 'admOrganisationView'}}">
+						<i class="fa fa-bar-chart-o"></i>
+						<span class="hidden-sm text"> Organisation</span>
+					</a>
+				</li>
 				{{/if}}
-					<li>
-						<a class="dropmenu" href="{{pathFor 'admCoursesList'}}">
-							<i class="fa fa-folder-open"></i>
-							<span class="hidden-sm text"> Courses</span>
-							<span class="chevron closed"></span>
-						</a>
-						<ul class="dropdown-menu">
-							{{#each courses}}
-								{{> courseMenuItem}}
-							{{/each}}
-						</ul>
-					</li>
-				{{/unless}}
+				<li>
+					<a class="dropmenu" href="{{pathFor 'admCoursesList'}}">
+						<i class="fa fa-folder-open"></i>
+						<span class="hidden-sm text"> Courses</span>
+						<span class="chevron closed"></span>
+					</a>
+					<ul class="dropdown-menu">
+						{{#each courses}}
+							{{> courseMenuItem}}
+						{{/each}}
+					</ul>
+				</li>
 			</ul>
 		</div>
 		<a href="#" id="main-menu-min" class="full visible-md visible-lg"><i class="fa fa-angle-double-left"></i></a>
