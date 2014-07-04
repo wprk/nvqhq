@@ -1,13 +1,15 @@
 Template.emailNotVerified.helpers({
   'emailList': function() {
-    emails = Meteor.user().emails,
-    emailList = [];
-    for (var i = 0; i < emails.length; i++) {
-      if (emails[i].verified == false) {
-        emailList.push({email: emails[i].address});
+    list = [];
+    if(Meteor.user()) {
+      emails = Meteor.user().emails;
+      for (var i = 0; i < emails.length; i++) {
+        if (emails[i].verified == false) {
+          list.push({email: emails[i].address});
+        }
       }
     }
-    return emailList;
+    return list;
   }
 });
 
@@ -15,10 +17,7 @@ Template.emailNotVerified.events({
   "click #sendVerificationEmail": function (event) {
     event.preventDefault();
     
-    var userId = Meteor.userId(),
-    email = $('input#verificationEmail').val();
-    
-    console.log(userId);
+    var email = $('input#verificationEmail').val();
 
     Meteor.call('sendVerificationEmail', email);
   }

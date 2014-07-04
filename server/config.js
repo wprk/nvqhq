@@ -5,12 +5,12 @@ Meteor.startup(function () {
   Accounts.emailTemplates.from = "NVQhq Admin <noreply@nvqhq.co.uk>";
   Accounts.emailTemplates.verifyEmail = {
     subject: function(user) {
-      return "Welcome to NVQhq E-learning Platform, " + user.profile.name;
+      return user.profile.name + ", Welcome to the NVQhq E-learning Platform";
     },
     text: function (user, url) {
      return "Hello " + user.profile.name + ", \n\n"
        + "Thank you for registering with NVQhq. To activate your account, simply click the link below:\n\n"
-       + Meteor.absoluteUrl('auth/email-verification/token/' + token); + "\n\n"
+       + url + "\n\n"
        + "Thanks, \n\n"
        + "The NVQhq Team";
     }
