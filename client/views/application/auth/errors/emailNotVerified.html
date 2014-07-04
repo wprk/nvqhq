@@ -9,9 +9,14 @@
       
       <div class="input-prepend input-group">
         <span class="input-group-addon clear"><i class="fa fa-envelope"></i></span>
-        <input id="prependedInput" class="form-control" size="16" type="text" placeholder="Your email address" value="{{email}}">
+        <select id="verificationEmail" class="form-control">
+          <option value="">Select an Email Address</option>
+          {{#each emailList}}
+            <option value="{{email}}">{{email}}</option>
+          {{/each}}
+        </select>
         <span class="input-group-btn">
-          <button class="btn btn-info" type="button">Resend Verification Email</button>
+          <button id="sendVerificationEmail" class="btn btn-info" type="button">Resend Verification Email</button>
         </span>
       </div>	
     </div><!--/col-->

@@ -1,5 +1,20 @@
 Meteor.startup(function () {
-  // process.env.MAIL_URL="smtp://wprk14%40gmail.com:peterGRUBB14!!@smtp.gmail.com:465/"; 
+  process.env.MAIL_URL="smtp://wprk14%40gmail.com:peterGRUBB14!!@smtp.gmail.com:465/";
+  
+  Accounts.emailTemplates.siteName = "NVQhq";
+  Accounts.emailTemplates.from = "NVQhq Admin <noreply@nvqhq.co.uk>";
+  Accounts.emailTemplates.verifyEmail = {
+    subject: function(user) {
+      return user.profile.name + ", Welcome to the NVQhq E-learning Platform";
+    },
+    text: function (user, url) {
+     return "Hello " + user.profile.name + ", \n\n"
+       + "Thank you for registering with NVQhq. To activate your account, simply click the link below:\n\n"
+       + url + "\n\n"
+       + "Thanks, \n\n"
+       + "The NVQhq Team";
+    }
+  };
   
   enviroment = process.env.NODE_ENV;
 

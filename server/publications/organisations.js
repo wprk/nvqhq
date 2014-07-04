@@ -21,7 +21,15 @@ Meteor.methods({
       new_organisation_id = Organisations.insert(organisationData, function(error) {
         if (!error) {
           Meteor.users.update({_id: user._id}, 
-            {"$set" : {"profile.organisation._id": new_organisation_id}}
+            {"$set" :
+              {"profile.organisation":
+                {
+                  _id: new_organisation_id,
+                  verified: true,
+                  verified_by: "system"
+                }
+              }
+            }
           );
           Roles.setUserRoles(user._id, [], Roles.GLOBAL_GROUP);
           Roles.setUserRoles(user._id, ['superadmin', 'admin'], new_organisation_id);
