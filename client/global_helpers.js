@@ -4,9 +4,8 @@ UI.registerHelper('organisations', function() {
 	return organisations;
 });
 UI.registerHelper('organisation', function() {
-	user = Meteor.user();
-	if (user) {
-		organisation = user.profile.organisation;
+	if (Meteor.user()) {
+		organisation = Organisations.findOne({_id: Meteor.user().profile.organisation._id});
 		return organisation;
 	} else {
 		return false;
