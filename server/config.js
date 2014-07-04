@@ -1,5 +1,5 @@
 Meteor.startup(function () {
-  process.env.MAIL_URL="smtp://wprk14%40gmail.com:peterGRUBB14!!@smtp.gmail.com:465/";
+  //process.env.MAIL_URL="smtp://wprk14%40gmail.com:peterGRUBB14!!@smtp.gmail.com:465/";
   
   Accounts.emailTemplates.siteName = "NVQhq";
   Accounts.emailTemplates.from = "NVQhq Admin <noreply@nvqhq.co.uk>";
