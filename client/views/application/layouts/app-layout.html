@@ -1,17 +1,19 @@
 <template name="appLayout">
-    <div id="wrap" class="sidebarBg">
-        <!-- Start of Main Template -->
-        {{> yield 'header'}}
-        <div class="container">
-            <div class="row">
-                {{> yield 'sidebarLeft'}}
-                <div id="content" class="col-lg-10 col-sm-11">
-                    {{> bootstrapErrors}}
-                    {{> yield}}
+    <div id="appTheme">
+        <div id="wrap" class="sidebarBg">
+            <!-- Start of Main Template -->
+            {{> yield 'header'}}
+            <div class="container">
+                <div class="row">
+                    {{> yield 'sidebarLeft'}}
+                    <div id="content" class="col-lg-10 col-sm-11">
+                        {{> bootstrapErrors}}
+                        {{> yield}}
+                    </div>
                 </div>
             </div>
+            <div id="push"></div>
         </div>
-        <div id="push"></div>
+        {{> footer}}
     </div>
-    {{> footer}}
 </template>
