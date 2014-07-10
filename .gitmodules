@@ -1,3 +1,6 @@
 [submodule "public"]
 	path = public
 	url = git@github.com:wprk/nvqhq_public.git
+[submodule "server/common"]
+	path = server/common
+	url = git@github.com:wprk/nvqhq_common.git

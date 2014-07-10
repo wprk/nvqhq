@@ -1,8 +1,0 @@
-{
-    "production": {
-        "MONGO_URL" : "mongodb://wprk:Y678wan@kahana.mongohq.com:10015/nvqhq"
-    },
-    "development": {
-        "MONGO_URL" : "mongodb://wprk:Y678wan@kahana.mongohq.com:10015/nvqhq"
-    }
-}
