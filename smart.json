@@ -8,6 +8,7 @@
     "jquery-ui-bootstrap": {},
     "modernizr-meteor": {},
     "roles": {},
-    "wizard": {}
+    "wizard": {},
+    "bootstrap-errors": {}
   }
 }
