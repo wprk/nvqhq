@@ -11,8 +11,17 @@
 			<a class="navbar-brand col-md-2 col-sm-1 col-xs-2" href="{{pathFor 'index'}}"><span>NVQhq</span></a>
 			<!-- start: Header Menu -->
 			<div class="nav-no-collapse header-nav">
-				<ul class="nav navbar-nav pull-right">
-					{{> accountInfo}}
+				<ul class="nav navbar-nav navbar-right">
+					{{#if currentUser}}
+	  					{{#if isInRole 'admin'}}
+	  						<li><a href="{{pathFor 'admDashboard'}}">Dashboard</a></li>
+	  					{{/if}}
+	  					{{#if isInRole 'learner'}}
+	  						<li><a href="{{pathFor 'lnrDashboard'}}">Dashboard</a></li>
+	  					{{/if}}
+					{{else}}
+						<li><a href="{{pathFor 'login'}}">Login or Register</a></li>
+					{{/if}}
 				</ul>
 			</div>
 			<!-- end: Header Menu -->

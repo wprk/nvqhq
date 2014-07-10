@@ -1,12 +1,12 @@
-<template name="pageLayout">
-    <div id="pageTheme">
-        <div id="wrap">
+<template name="appLayout">
+    <div id="appTheme">
+        <div id="wrap" class="sidebarBg">
             <!-- Start of Main Template -->
             {{> yield 'header'}}
             <div class="container">
                 <div class="row">
                     {{> yield 'sidebarLeft'}}
-                    <div id="content" class="full">
+                    <div id="content" class="col-lg-10 col-sm-11">
                         {{> bootstrapErrors}}
                         {{> yield}}
                     </div>
