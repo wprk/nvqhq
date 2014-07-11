@@ -8,22 +8,16 @@
 		<div class="sidebar-nav nav-collapse collapse navbar-collapse">
 			<ul class="nav main-menu">
 				<li>
-					<a href="{{pathFor 'lnrDefaultDashboard'}}">
+					<a href="#">
 						<i class="fa fa-bar-chart-o"></i>
 						<span class="hidden-sm text"> Dashboard</span>
 					</a>
 				</li>
 				<li>
-					<a class="dropmenu" href="{{pathFor 'lnrCoursesList'}}">
+					<a href="#">
 						<i class="fa fa-folder-open"></i>
 						<span class="hidden-sm text">Courses</span>
-						<span class="chevron closed"></span>
-					</a>
-					<ul class="dropdown-menu">
-						{{#each courses}}
-							{{> courseMenuItem}}
-						{{/each}}
-					</ul>
+#					</a>
 				</li>
 			</ul>
 		</div>
@@ -37,30 +31,24 @@
 		<div class="sidebar-nav nav-collapse collapse navbar-collapse">
 			<ul class="nav main-menu">
 				<li>
-					<a href="{{pathFor 'admDefaultDashboard'}}">
+					<a href="#">
 						<i class="fa fa-bar-chart-o"></i>
 						<span class="hidden-sm text"> Dashboard</span>
 					</a>
 				</li>
 				{{#if isInRole 'superadmin' organisation._id}}
 				<li>
-					<a href="{{pathFor 'admOrganisationView'}}">
+					<a href="#">
 						<i class="fa fa-bar-chart-o"></i>
 						<span class="hidden-sm text"> Organisation</span>
 					</a>
 				</li>
 				{{/if}}
 				<li>
-					<a class="dropmenu" href="{{pathFor 'admCoursesList'}}">
+					<a href="#">
 						<i class="fa fa-folder-open"></i>
 						<span class="hidden-sm text"> Courses</span>
-						<span class="chevron closed"></span>
 					</a>
-					<ul class="dropdown-menu">
-						{{#each courses}}
-							{{> courseMenuItem}}
-						{{/each}}
-					</ul>
 				</li>
 			</ul>
 		</div>
@@ -75,7 +63,7 @@
 			<div class="sidebar-nav nav-collapse collapse navbar-collapse">
 				<ul class="nav main-menu">
 					<li>
-						<a href="{{pathFor 'admOrganisationSetup'}}">
+						<a href="#">
 							<i class="fa fa-bar-chart-o"></i>
 							<span class="hidden-sm text"> Organisation</span>
 						</a>
