@@ -1,19 +1,16 @@
 <template name="pageLayout">
-    <div id="pageTheme">
-        <div id="wrap">
-            <!-- Start of Main Template -->
-            {{> yield 'header'}}
-            <div class="container">
-                <div class="row">
-                    {{> yield 'sidebarLeft'}}
-                    <div id="content" class="full">
-                        {{> bootstrapErrors}}
-                        {{> yield}}
-                    </div>
+    <div id="wrap">
+        <!-- Start of Main Template -->
+        {{> yield 'header'}}
+        <div class="container">
+            <div class="row">
+                {{> yield 'sidebarLeft'}}
+                <div id="content" class="full">
+                    {{> yield}}
                 </div>
             </div>
-            <div id="push"></div>
         </div>
-        {{> footer}}
+        <div id="push"></div>
     </div>
+    {{> footer}}
 </template>

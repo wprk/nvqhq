@@ -16,18 +16,18 @@ Template.organisationRegistration.events({
 			}
 		},
 		roles = {};
-		roles[Roles.GLOBAL_GROUP] = ["superadmin"];
+		// roles[Roles.GLOBAL_GROUP] = ["superadmin"];
 		
-		Accounts.createUser({
-			email: email,
-			username: username,
-			password: password,
-			profile: profile,
-			roles: roles
-		}, function(error) {
-			if (error) {
-				Errors.throw('danger', error);
-			}
-		});
+		// Accounts.createUser({
+		// 	email: email,
+		// 	username: username,
+		// 	password: password,
+		// 	profile: profile,
+		// 	roles: roles
+		// }, function(error) {
+		// 	if (error) {
+		// 		Errors.throw('danger', error);
+		// 	}
+		// });
 	}
 });
