@@ -13,3 +13,6 @@ accounts-twitter
 accounts-password
 roles
 service-configuration
+bootstrap-errors
+less
+simple-schema
